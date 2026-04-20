@@ -1,296 +1,28 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Radiant Premier Windows & Doors — Dallas–Fort Worth</title>
-  <style>@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap');
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --bg: #F7F7F5;
-  --white: #FFFFFF;
-  --text: #1A1A1A;
-  --text-secondary: #6B6B6B;
-  --red: #8B1E1E;
-  --red-dark: #6e1818;
-  --navy: #1C2A39;
-  --neutral: #D6D1C4;
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-sans: 'Montserrat', Helvetica, sans-serif;
-  --max: 1160px;
-  --radius: 2px;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: var(--font-sans);
-  background: var(--bg);
-  color: var(--text);
-  font-size: 16px;
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* ── NAV ── */
-nav {
-  background: var(--white);
-  border-bottom: 1px solid var(--neutral);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.nav-inner {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 2rem;
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  text-decoration: none;
-}
-.logo-name {
-  font-family: var(--font-serif);
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--navy);
-  letter-spacing: 0.02em;
-  line-height: 1;
-}
-.logo-tag {
-  font-size: 0.58rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--red);
-}
-
-.nav-links {
-  display: flex;
-  gap: 2.5rem;
-  list-style: none;
-  align-items: center;
-}
-.nav-links a {
-  text-decoration: none;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text);
-  transition: color 0.2s;
-}
-.nav-links a:hover, .nav-links a.active { color: var(--red); }
-.nav-cta {
-  background: var(--red);
-  color: var(--white) !important;
-  padding: 0.6rem 1.4rem;
-  border-radius: var(--radius);
-  transition: background 0.2s !important;
-}
-.nav-cta:hover { background: var(--red-dark) !important; color: var(--white) !important; }
-
-/* hamburger */
-.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
-.hamburger span { display: block; width: 22px; height: 2px; background: var(--text); transition: all 0.3s; }
-.mobile-menu {
-  display: none;
-  position: fixed;
-  inset: 72px 0 0 0;
-  background: var(--white);
-  padding: 2rem;
-  z-index: 99;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-.mobile-menu a {
-  font-size: 1.2rem;
-  font-family: var(--font-serif);
-  color: var(--text);
-  text-decoration: none;
-  border-bottom: 1px solid var(--neutral);
-  padding-bottom: 1rem;
-}
-.mobile-menu a:hover { color: var(--red); }
-.mobile-menu.open { display: flex; }
-
-/* ── BUTTONS ── */
-.btn {
-  display: inline-block;
-  background: var(--red);
-  color: var(--white);
-  font-family: var(--font-sans);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  padding: 1rem 2.2rem;
-  border: none;
-  border-radius: var(--radius);
-  cursor: pointer;
-  text-decoration: none;
-  transition: background 0.2s, transform 0.15s;
-}
-.btn:hover { background: var(--red-dark); transform: translateY(-1px); }
-.btn-outline {
-  background: transparent;
-  color: var(--white);
-  border: 1.5px solid rgba(255,255,255,0.5);
-}
-.btn-outline:hover { background: rgba(255,255,255,0.08); }
-.btn-navy {
-  background: var(--navy);
-}
-.btn-navy:hover { background: #0f1d29; }
-
-/* ── SHARED SECTIONS ── */
-.container { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
-
-section { padding: 6rem 0; }
-
-.section-label {
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--red);
-  margin-bottom: 1rem;
-  display: block;
-}
-
-h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 600; line-height: 1.2; color: var(--text); }
-h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); }
-h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); }
-h3 { font-size: 1.4rem; }
-h4 { font-size: 1.1rem; }
-
-p { color: var(--text-secondary); line-height: 1.8; }
-
-.divider {
-  width: 48px;
-  height: 2px;
-  background: var(--red);
-  margin: 1.5rem 0;
-}
-.divider.center { margin: 1.5rem auto; }
-
-/* ── IMAGE PLACEHOLDER ── */
-.img-placeholder {
-  background: repeating-linear-gradient(
-    135deg,
-    #e8e4dc 0px,
-    #e8e4dc 4px,
-    #ece9e2 4px,
-    #ece9e2 16px
-  );
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 0.5rem;
-  color: #9a9488;
-  font-family: monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.04em;
-  text-align: center;
-  padding: 1rem;
-  border-radius: 1px;
-}
-.img-placeholder .img-label { font-weight: bold; font-size: 0.68rem; }
-
-/* ── FOOTER ── */
-footer {
-  background: var(--navy);
-  color: rgba(255,255,255,0.7);
-  padding: 4rem 0 2rem;
-  font-size: 0.85rem;
-}
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 3rem;
-  padding-bottom: 3rem;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  margin-bottom: 2rem;
-}
-.footer-logo-name {
-  font-family: var(--font-serif);
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--white);
-  margin-bottom: 0.4rem;
-}
-.footer-logo-tag {
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--red);
-  margin-bottom: 1rem;
-}
-.footer-desc { color: rgba(255,255,255,0.5); line-height: 1.7; font-size: 0.82rem; }
-.footer-col h5 {
-  font-family: var(--font-sans);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
-  margin-bottom: 1.2rem;
-}
-.footer-col ul { list-style: none; }
-.footer-col ul li { margin-bottom: 0.6rem; }
-.footer-col ul li a {
-  color: rgba(255,255,255,0.65);
-  text-decoration: none;
-  transition: color 0.2s;
-  font-size: 0.85rem;
-}
-.footer-col ul li a:hover { color: var(--white); }
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.3);
-}
-
-/* ── RESPONSIVE ── */
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-  section { padding: 4rem 0; }
-  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .footer-bottom { flex-direction: column; text-align: center; }
-}
-</style>
+  <title>Radiant Premier Windows &amp; Doors — Dallas–Fort Worth</title>
+  <meta name="description" content="Premium window and door replacement for DFW homeowners. Veteran &amp; minority owned. Factory-certified installation, no subcontractors, lifetime warranty.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <style>
     /* ── HERO ── */
     .hero {
-      background: var(--white);
+      background: var(--navy-deep);
       padding: 7rem 0 6rem;
       position: relative;
       overflow: hidden;
     }
-    .hero::before {
+    .hero::after {
       content: '';
       position: absolute;
-      right: 0; top: 0; bottom: 0;
-      width: 45%;
-      background: var(--bg);
-      z-index: 0;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(139,30,30,0.08) 0%, transparent 65%);
+      pointer-events: none;
     }
     .hero-inner {
       max-width: var(--max);
@@ -303,227 +35,229 @@ footer {
       position: relative;
       z-index: 1;
     }
-    .hero-eyebrow {
+    .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 0.75rem;
-      font-size: 0.68rem;
+      gap: 0.6rem;
+      font-size: 0.62rem;
       font-weight: 700;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--red);
+      color: var(--gold);
+      border: 1px solid rgba(184,144,58,0.3);
+      padding: 0.45rem 1rem;
+      border-radius: 2px;
+      margin-bottom: 2rem;
+    }
+    .hero-badge svg { width: 13px; height: 13px; }
+    .hero h1 {
+      color: var(--white);
       margin-bottom: 1.5rem;
+      font-size: clamp(2.6rem, 5vw, 3.8rem);
+      line-height: 1.15;
     }
-    .hero-eyebrow::before {
-      content: '';
-      display: block;
-      width: 32px;
-      height: 1.5px;
-      background: var(--red);
-    }
-    .hero h1 { margin-bottom: 1.5rem; }
-    .hero h1 em { font-style: italic; color: var(--red); }
+    .hero h1 em { font-style: italic; color: rgba(255,255,255,0.55); }
     .hero-sub {
-      font-size: 1.05rem;
-      color: var(--text-secondary);
+      font-size: 1rem;
+      color: rgba(255,255,255,0.5);
       margin-bottom: 2.5rem;
-      max-width: 420px;
-      line-height: 1.8;
+      max-width: 440px;
+      line-height: 1.85;
     }
     .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
     .hero-phone {
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      color: var(--text);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.75);
       text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
     }
-    .hero-phone span { display: block; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 2px; }
-    .hero-img {
-      height: 500px;
-      border-radius: 1px;
-    }
-    .hero-trust {
+    .hero-phone:hover { color: var(--white); }
+    .hero-phone span { display: block; font-size: 0.58rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 2px; }
+    .hero-stats {
       display: flex;
       gap: 2.5rem;
       margin-top: 3.5rem;
       padding-top: 2.5rem;
-      border-top: 1px solid var(--neutral);
+      border-top: 1px solid rgba(255,255,255,0.1);
     }
-    .trust-item { display: flex; flex-direction: column; gap: 2px; }
-    .trust-num { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 700; color: var(--navy); }
-    .trust-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); }
+    .stat-item { display: flex; flex-direction: column; gap: 3px; }
+    .stat-num { font-family: var(--font-serif); font-size: 1.55rem; font-weight: 700; color: var(--white); }
+    .stat-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+    .hero-img { height: 520px; border-radius: 1px; }
 
-    /* ── VALUE PROPS ── */
-    .values { background: var(--navy); padding: 4.5rem 0; }
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-    }
-    .value-item { text-align: center; padding: 1rem; }
-    .value-icon {
-      width: 44px; height: 44px;
-      border: 1.5px solid rgba(139,30,30,0.5);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 1.2rem;
-    }
-    .value-icon svg { width: 20px; height: 20px; stroke: var(--red); fill: none; stroke-width: 1.5; }
-    .value-item h4 { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--white); margin-bottom: 0.5rem; }
-    .value-item p { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
+```
+/* ── BRAND STRIP ── */
+.brand-strip {
+  background: var(--white);
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--neutral);
+}
+.brand-strip-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+.brand-strip-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.3);
+  white-space: nowrap;
+}
+.brand-names { display: flex; gap: 3.5rem; align-items: center; }
+.brand-name {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--navy);
+  opacity: 0.7;
+  letter-spacing: 0.01em;
+}
+.brand-name span { display: block; font-family: var(--font-sans); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(0,0,0,0.3); margin-top: 2px; }
 
-    /* ── SERVICES PREVIEW ── */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5px;
-      margin-top: 3.5rem;
-    }
-    .service-card {
-      background: var(--white);
-      padding: 2.5rem;
-      position: relative;
-      overflow: hidden;
-      transition: box-shadow 0.3s;
-    }
-    .service-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 3px;
-      background: var(--red);
-      transform: scaleX(0);
-      transition: transform 0.3s;
-    }
-    .service-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.07); }
-    .service-card:hover::after { transform: scaleX(1); }
-    .service-num { font-family: var(--font-serif); font-size: 3rem; font-weight: 700; color: var(--neutral); line-height: 1; margin-bottom: 1.5rem; }
-    .service-card h3 { margin-bottom: 0.75rem; }
-    .service-card p { font-size: 0.88rem; margin-bottom: 1.5rem; }
-    .service-link {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--red);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .service-link::after { content: '→'; }
+/* ── VALUE STRIP ── */
+.values { background: var(--navy); padding: 5rem 0; }
+.values-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(255,255,255,0.06); }
+.value-item {
+  background: var(--navy);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: background 0.2s;
+}
+.value-item:hover { background: rgba(255,255,255,0.03); }
+.value-icon {
+  width: 42px; height: 42px;
+  border: 1px solid rgba(184,144,58,0.3);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.2rem;
+}
+.value-icon svg { width: 18px; height: 18px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+.value-item h4 {
+  font-family: var(--font-sans);
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--white); margin-bottom: 0.6rem;
+}
+.value-item p { font-size: 0.82rem; color: rgba(255,255,255,0.4); line-height: 1.75; }
 
-    /* ── WHY US ── */
-    .why { background: var(--white); }
-    .why-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: center;
-    }
-    .why-img { height: 480px; }
-    .why-list { list-style: none; margin-top: 2rem; }
-    .why-list li {
-      display: flex;
-      gap: 1.2rem;
-      padding: 1.2rem 0;
-      border-bottom: 1px solid var(--neutral);
-    }
-    .why-list li:last-child { border-bottom: none; }
-    .why-check {
-      width: 22px; height: 22px; flex-shrink: 0;
-      background: var(--red);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      margin-top: 2px;
-    }
-    .why-check svg { width: 11px; height: 11px; stroke: white; fill: none; stroke-width: 2.5; }
-    .why-list strong { display: block; font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 2px; font-family: var(--font-sans); }
-    .why-list p { font-size: 0.84rem; }
+/* ── MEZZO FEATURE ── */
+.mezzo { background: var(--bg); }
+.mezzo-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+.mezzo-img { height: 500px; }
+.mezzo-badge {
+  display: inline-block;
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(184,144,58,0.3);
+  padding: 0.3rem 0.8rem;
+  margin-bottom: 1.2rem;
+}
+.mezzo h2 { margin-bottom: 0.75rem; }
+.mezzo-lead { font-size: 1rem; color: var(--text-secondary); line-height: 1.85; margin-bottom: 2rem; }
+.mezzo-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem; }
+.spec-item { background: var(--white); padding: 1.2rem 1.4rem; border-left: 3px solid var(--red); }
+.spec-item strong { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); margin-bottom: 3px; }
+.spec-item span { font-size: 0.82rem; color: var(--text-secondary); }
 
-    /* ── TESTIMONIALS ── */
-    .testimonials { background: var(--bg); }
-    .testi-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 3.5rem;
-    }
-    .testi-card {
-      background: var(--white);
-      padding: 2rem 2rem 2.2rem;
-      border-top: 3px solid var(--neutral);
-      transition: border-color 0.2s;
-    }
-    .testi-card:hover { border-color: var(--red); }
-    .stars { color: var(--red); font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 1rem; }
-    .testi-text { font-family: var(--font-serif); font-size: 1.05rem; font-style: italic; color: var(--text); line-height: 1.7; margin-bottom: 1.5rem; }
-    .testi-author { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); }
-    .testi-location { font-size: 0.72rem; color: var(--neutral); display: block; margin-top: 2px; }
+/* ── SERVICES ── */
+.services { background: var(--white); }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; margin-top: 3.5rem; background: var(--neutral); }
+.service-card { background: var(--white); padding: 3rem 2.5rem; transition: background 0.2s; }
+.service-card:hover { background: var(--bg); }
+.service-num { font-family: var(--font-serif); font-size: 0.72rem; font-weight: 700; color: var(--neutral); letter-spacing: 0.1em; margin-bottom: 1.2rem; }
+.service-card h3 { margin-bottom: 0.75rem; }
+.service-card p { font-size: 0.88rem; line-height: 1.85; }
+.service-link { display: inline-block; margin-top: 1.5rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); text-decoration: none; border-bottom: 1px solid rgba(139,30,30,0.25); padding-bottom: 2px; transition: border-color 0.2s; }
+.service-link:hover { border-color: var(--red); }
 
-    /* ── PROCESS ── */
-    .process { background: var(--white); }
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 3rem;
-      margin-top: 4rem;
-      position: relative;
-    }
-    .process-grid::before {
-      content: '';
-      position: absolute;
-      top: 32px; left: calc(16.66% + 1rem); right: calc(16.66% + 1rem);
-      height: 1px;
-      background: var(--neutral);
-    }
-    .process-step { text-align: center; }
-    .process-num {
-      width: 64px; height: 64px;
-      border: 1.5px solid var(--neutral);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 1.5rem;
-      font-family: var(--font-serif);
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--red);
-      background: var(--white);
-      position: relative;
-      z-index: 1;
-    }
-    .process-step h3 { margin-bottom: 0.75rem; }
-    .process-step p { font-size: 0.88rem; max-width: 260px; margin: 0 auto; }
+/* ── WHY US ── */
+.why { background: var(--bg); }
+.why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+.why-img { height: 480px; }
+.why-list { list-style: none; display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
+.why-list li { display: flex; gap: 1.2rem; align-items: flex-start; }
+.why-check { width: 28px; height: 28px; border: 1.5px solid rgba(139,30,30,0.25); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.why-check svg { width: 12px; height: 12px; stroke: var(--red); fill: none; stroke-width: 2.5; }
+.why-list li strong { display: block; font-size: 0.85rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.why-list li p { font-size: 0.85rem; }
 
-    /* ── FINAL CTA ── */
-    .final-cta {
-      background: var(--bg);
-      border-top: 1px solid var(--neutral);
-      text-align: center;
-    }
-    .final-cta h2 { margin-bottom: 1rem; }
-    .final-cta p { max-width: 520px; margin: 0 auto 2.5rem; }
+/* ── TESTIMONIALS ── */
+.testimonials { background: var(--navy-deep); padding: 6rem 0; }
+.testimonials .section-label { color: var(--gold); }
+.testimonials h2 { color: var(--white); }
+.testimonials .divider { background: var(--gold); }
+.testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5px; margin-top: 4rem; background: rgba(255,255,255,0.06); }
+.testi-card { background: var(--navy-deep); padding: 2.5rem; }
+.stars { color: var(--gold); font-size: 0.85rem; letter-spacing: 0.1em; margin-bottom: 1.5rem; }
+.testi-text { font-family: var(--font-serif); font-size: 1rem; font-style: italic; color: rgba(255,255,255,0.8); line-height: 1.75; margin-bottom: 1.5rem; }
+.testi-author { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); }
+.testi-location { font-size: 0.7rem; color: rgba(255,255,255,0.3); display: block; margin-top: 2px; }
 
-    /* responsive */
-    @media (max-width: 900px) {
-      .hero::before { display: none; }
-      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .hero-img { height: 300px; }
-      .hero-trust { gap: 1.5rem; }
-      .values-grid { grid-template-columns: repeat(2, 1fr); }
-      .services-grid { grid-template-columns: 1fr; }
-      .why-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .why-img { height: 280px; }
-      .testi-grid { grid-template-columns: 1fr; }
-      .process-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .process-grid::before { display: none; }
-    }
+/* ── PROCESS ── */
+.process { background: var(--bg); }
+.process-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 3rem; margin-top: 4rem; position: relative; }
+.process-grid::before {
+  content: '';
+  position: absolute;
+  top: 32px; left: calc(16.66% + 1rem); right: calc(16.66% + 1rem);
+  height: 1px;
+  background: var(--neutral);
+}
+.process-step { text-align: center; }
+.process-num {
+  width: 64px; height: 64px;
+  border: 1.5px solid var(--neutral);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-family: var(--font-serif);
+  font-size: 1.3rem; font-weight: 600; color: var(--red);
+  background: var(--bg);
+  position: relative; z-index: 1;
+}
+.process-step h3 { margin-bottom: 0.75rem; }
+.process-step p { font-size: 0.88rem; max-width: 260px; margin: 0 auto; }
+
+/* ── FINAL CTA ── */
+.final-cta { background: var(--navy-deep); text-align: center; padding: 7rem 0; }
+.final-cta h2 { color: var(--white); margin-bottom: 1rem; }
+.final-cta > .container > p { max-width: 520px; margin: 0 auto 2.5rem; color: rgba(255,255,255,0.45); }
+.cta-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .hero-img { height: 300px; }
+  .hero-stats { gap: 1.5rem; }
+  .values-grid { grid-template-columns: repeat(2,1fr); }
+  .mezzo-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .mezzo-img { height: 300px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .why-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .why-img { height: 300px; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .process-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .process-grid::before { display: none; }
+  .brand-names { gap: 2rem; }
+}
+@media (max-width: 600px) {
+  .values-grid { grid-template-columns: 1fr; }
+  .mezzo-specs { grid-template-columns: 1fr; }
+  .hero-stats { flex-direction: column; gap: 1rem; }
+}
+```
+
   </style>
 </head>
 <body>
 
 <!-- NAV -->
+
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="logo">
@@ -536,6 +270,10 @@ footer {
       <li><a href="services.html">Services</a></li>
       <li><a href="contact.html" class="nav-cta">Get Free Estimate</a></li>
     </ul>
+    <div class="vet-badge">
+      <svg viewBox="0 0 24 24" fill="#B8903A" width="12" height="12"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+      Veteran &amp; Minority Owned
+    </div>
     <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -549,145 +287,205 @@ footer {
 </div>
 
 <!-- HERO -->
+
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-content">
-      <span class="hero-eyebrow">Dallas–Fort Worth's Premier Choice</span>
-      <h1>Windows &amp; Doors<br/>Built to <em>Last a Lifetime</em></h1>
-      <p class="hero-sub">Precision installation. Performance products. A seamless experience from first call to final walkthrough — for the home you've worked hard to build.</p>
+    <div>
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+        Veteran &amp; Minority Owned · Dallas–Fort Worth
+      </div>
+      <h1>We Left the Industry<br/>to <em>Rebuild It.</em></h1>
+      <p class="hero-sub">After 15 years inside the big window corporations, we saw too much: overpriced products, rushed installs, homeowners left holding the bag. So we started over — and built the company we always wished existed.</p>
       <div class="hero-actions">
         <a href="contact.html" class="btn">Get My Free Estimate</a>
-        <a href="tel:+18175550142" class="hero-phone">
+        <a href="tel:4438757617" class="hero-phone">
           <span>Call us directly</span>
-          (817) 555-0142
+          (443) 875-7617
         </a>
       </div>
-      <div class="hero-trust">
-        <div class="trust-item">
-          <span class="trust-num">500+</span>
-          <span class="trust-label">Homes Transformed</span>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">15+</span>
+          <span class="stat-label">Years Industry Experience</span>
         </div>
-        <div class="trust-item">
-          <span class="trust-num">12yr</span>
-          <span class="trust-label">In DFW</span>
+        <div class="stat-item">
+          <span class="stat-num">Triple</span>
+          <span class="stat-label">Pane Standard</span>
         </div>
-        <div class="trust-item">
-          <span class="trust-num">4.9★</span>
-          <span class="trust-label">Customer Rating</span>
+        <div class="stat-item">
+          <span class="stat-num">Lifetime</span>
+          <span class="stat-label">Workmanship Warranty</span>
         </div>
       </div>
     </div>
-    <div class="img-placeholder hero-img">
-      <div class="img-label">HERO IMAGE</div>
-      <div>Luxury home exterior —<br/>large windows, clean façade,<br/>late afternoon light</div>
+    <div class="img-ph hero-img">
+      <strong>Hero Image</strong>
+      Luxury DFW home exterior —<br/>large windows, late afternoon<br/>golden light, clean modern façade
     </div>
   </div>
 </section>
 
+<!-- BRAND STRIP -->
+
+<div class="brand-strip">
+  <div class="container">
+    <div class="brand-strip-inner">
+      <span class="brand-strip-label">Our Manufacturing Partners</span>
+      <div class="brand-names">
+        <div class="brand-name">Alside <span>AMI Windows</span></div>
+        <div class="brand-name" style="color:var(--neutral);">—</div>
+        <div class="brand-name">ProVia <span>Windows &amp; Doors</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- VALUE STRIP -->
+
 <div class="values">
   <div class="container">
     <div class="values-grid">
       <div class="value-item">
         <div class="value-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4>Veteran-Owned Integrity</h4>
+        <p>We serve with the same discipline and accountability we brought to service — no shortcuts, ever.</p>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">
           <svg viewBox="0 0 24 24"><path d="M12 2L2 7v10l10 5 10-5V7L12 2z"/></svg>
         </div>
-        <h4>Premium-Grade Products</h4>
-        <p>We partner only with manufacturers known for performance, durability, and warranty.</p>
+        <h4>Premium-Grade Products Only</h4>
+        <p>We carry Alside and ProVia — not every brand under the sun. Just the ones we stand behind completely.</p>
       </div>
       <div class="value-item">
         <div class="value-icon">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
         </div>
         <h4>White-Glove Installation</h4>
-        <p>Our certified crews protect your home throughout the install — no shortcuts, no mess.</p>
+        <p>Our certified crews protect your home throughout — no subcontractors, no shortcuts, no mess.</p>
       </div>
       <div class="value-item">
         <div class="value-icon">
-          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
         </div>
         <h4>Transparent Pricing</h4>
-        <p>No surprise add-ons. Your estimate is your price — clear and straightforward.</p>
-      </div>
-      <div class="value-item">
-        <div class="value-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h4>Lifetime Workmanship</h4>
-        <p>We back our labor with a lifetime warranty because we stand behind every job we do.</p>
+        <p>Your estimate is your price. We don't upsell, add surprise fees, or pressure you into anything.</p>
       </div>
     </div>
   </div>
 </div>
 
-<!-- SERVICES PREVIEW -->
-<section>
+<!-- MEZZO FEATURE -->
+
+<section class="mezzo">
+  <div class="container">
+    <div class="mezzo-inner">
+      <div class="img-ph mezzo-img">
+        <strong>Product Feature</strong>
+        Alside Mezzo window installed in<br/>a bright living room — triple-pane<br/>glass, clean sightlines, natural light
+      </div>
+      <div>
+        <span class="mezzo-badge">Our Signature Window</span>
+        <h2>Alside Mezzo® +<br/>ClimaTech PriME.</h2>
+        <div class="divider"></div>
+        <p class="mezzo-lead">While most window companies offer triple-pane as a costly upgrade, we make it our standard. The Mezzo with ClimaTech PriME meets ENERGY STAR® Most Efficient criteria in all climate zones — and may qualify your home for federal tax credits.</p>
+        <div class="mezzo-specs">
+          <div class="spec-item">
+            <strong>Triple-Pane · 3× Low-E</strong>
+            <span>3 panes of glass, 3 surfaces of Low-E technology — maximum thermal barrier</span>
+          </div>
+          <div class="spec-item">
+            <strong>Dual Argon Gas Spaces</strong>
+            <span>Two argon-filled chambers between panes reduce Texas summer heat transfer</span>
+          </div>
+          <div class="spec-item">
+            <strong>U-Factor 0.19 · SHGC 0.21</strong>
+            <span>ENERGY STAR® Most Efficient — all climate zones, tax credit eligible</span>
+          </div>
+          <div class="spec-item">
+            <strong>Warm-Edge Spacer Systems</strong>
+            <span>Two warm-edge spacers; Stainless Steel Intercept® or Super Spacer® available</span>
+          </div>
+        </div>
+        <a href="services.html" class="btn">See All Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+
+<section class="services">
   <div class="container">
     <span class="section-label">What We Do</span>
-    <h2>Solutions for Every<br/>Opening in Your Home</h2>
+    <h2>Every Opening. Done Right.</h2>
     <div class="services-grid">
       <div class="service-card">
         <div class="service-num">01</div>
         <h3>Window Replacement</h3>
-        <p>Energy-efficient, custom-fitted windows that reduce utility costs and elevate your home's curb appeal — installed in a single day.</p>
-        <a href="services.html" class="service-link">Learn more</a>
+        <p>Triple-pane, argon-filled, Climate Attack Elite glass — custom fitted to your home and installed to manufacturer specification. The last windows you'll ever need.</p>
+        <a href="services.html#windows" class="service-link">Learn more</a>
       </div>
       <div class="service-card">
         <div class="service-num">02</div>
         <h3>Entry Doors</h3>
-        <p>Make the right first impression. Our entry doors combine security, insulation, and architectural beauty — designed for lasting performance.</p>
-        <a href="services.html" class="service-link">Learn more</a>
+        <p>ProVia entry doors engineered for beauty, security, and decades of Texas weather. We install them the way the manufacturer intends — because your warranty depends on it.</p>
+        <a href="services.html#entry-doors" class="service-link">Learn more</a>
       </div>
       <div class="service-card">
         <div class="service-num">03</div>
         <h3>Patio &amp; Sliding Doors</h3>
-        <p>Seamlessly connect your indoor living spaces to the outdoors. Smooth operation, superior sealing, and timeless design.</p>
-        <a href="services.html" class="service-link">Learn more</a>
+        <p>Connect your living space to the outdoors seamlessly. Smooth hardware, superior sealing, and a finished installation that feels effortless every time you reach for the handle.</p>
+        <a href="services.html#patio-doors" class="service-link">Learn more</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- WHY US -->
+
 <section class="why">
   <div class="container">
     <div class="why-inner">
-      <div class="img-placeholder why-img">
-        <div class="img-label">INSTALLATION PHOTO</div>
-        <div>Craftsman installing a large<br/>casement window — precise,<br/>professional, clean worksite</div>
+      <div class="img-ph why-img">
+        <strong>Installation Photo</strong>
+        Radiant Premier crew installing<br/>a large Mezzo window —<br/>precise, professional, clean worksite
       </div>
       <div>
         <span class="section-label">Why Radiant Premier</span>
-        <h2>A Different Standard of Care</h2>
+        <h2>The Standard We Set for Ourselves</h2>
         <div class="divider"></div>
-        <p>We built Radiant Premier around one principle: treat every homeowner's project the way we'd want ours treated — with precision, honesty, and respect for your home.</p>
+        <p>We didn't leave the corporate window industry to do the same thing — just smaller. We left to do it right. Every decision at Radiant Premier traces back to a single commitment: the homeowner comes first.</p>
         <ul class="why-list">
           <li>
             <div class="why-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
             <div>
-              <strong>Factory-Certified Installation Crews</strong>
-              <p>Every installer is trained and certified to manufacturer specs — so your warranty stays fully intact.</p>
+              <strong>No Subcontractors — Ever</strong>
+              <p>Your project is handled by our own trained crew from first call to final walkthrough. No handoffs to unknown workers.</p>
             </div>
           </li>
           <li>
             <div class="why-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
             <div>
-              <strong>No Subcontractors</strong>
-              <p>Your project is handled by our own team from start to finish. No handoffs, no surprises.</p>
+              <strong>Factory-Certified Installation</strong>
+              <p>We install to manufacturer specification on every job — so your warranty stays fully intact, not voided on a technicality.</p>
             </div>
           </li>
           <li>
             <div class="why-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
             <div>
-              <strong>One Point of Contact</strong>
-              <p>Your dedicated project lead is available throughout the process — you'll never wonder what's happening.</p>
+              <strong>We Don't Oversell</strong>
+              <p>We spent years watching companies pitch products homeowners didn't need. We won't do it. Our recommendation is always what's genuinely right for your home.</p>
             </div>
           </li>
           <li>
             <div class="why-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
             <div>
               <strong>Spotless Jobsite Guarantee</strong>
-              <p>We clean up completely before we leave. Your home looks better when we're done — not worse.</p>
+              <p>Drop cloths laid, surfaces protected, debris removed. We clean up completely before we leave — every single time.</p>
             </div>
           </li>
         </ul>
@@ -698,12 +496,13 @@ footer {
 </section>
 
 <!-- TESTIMONIALS -->
+
 <section class="testimonials">
   <div class="container">
     <div style="text-align:center;">
       <span class="section-label">What Homeowners Say</span>
-      <h2>Trusted Across DFW</h2>
-      <div class="divider center"></div>
+      <h2 style="color:var(--white);">Trusted Across DFW</h2>
+      <div class="divider center" style="background:var(--gold);"></div>
     </div>
     <div class="testi-grid">
       <div class="testi-card">
@@ -716,19 +515,20 @@ footer {
         <div class="stars">★★★★★</div>
         <p class="testi-text">"We replaced 14 windows and two doors. Radiant handled everything professionally. Our energy bill dropped noticeably in the first month. Highly recommend without hesitation."</p>
         <span class="testi-author">David &amp; Sandra K.</span>
-        <span class="testi-location">Colleyville, TX</span>
+        <span class="testi-location">Frisco, TX</span>
       </div>
       <div class="testi-card">
         <div class="stars">★★★★★</div>
-        <p class="testi-text">"They didn't try to upsell me on things I didn't need. They were honest, thorough, and delivered exactly what was promised. That kind of integrity is rare. They've earned a customer for life."</p>
+        <p class="testi-text">"They didn't try to upsell me on things I didn't need. Honest, thorough, and delivered exactly what was promised. That kind of integrity is rare — they've earned a customer for life."</p>
         <span class="testi-author">Robert H.</span>
-        <span class="testi-location">Westlake, TX</span>
+        <span class="testi-location">Colleyville, TX</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PROCESS -->
+
 <section class="process">
   <div class="container">
     <div style="text-align:center;">
@@ -740,12 +540,12 @@ footer {
       <div class="process-step">
         <div class="process-num">1</div>
         <h3>Free In-Home Estimate</h3>
-        <p>We visit your home, assess your openings, understand your goals, and present a clear, honest proposal — no pressure, no obligation.</p>
+        <p>We visit your home, assess your openings, understand your goals, and present a clear honest proposal — no pressure, no obligation.</p>
       </div>
       <div class="process-step">
         <div class="process-num">2</div>
         <h3>Custom Order &amp; Scheduling</h3>
-        <p>Once you approve, we order your custom-configured products and schedule installation at your convenience — typically within 3–5 weeks.</p>
+        <p>Once approved, we order your custom-configured products and schedule installation at your convenience.</p>
       </div>
       <div class="process-step">
         <div class="process-num">3</div>
@@ -757,24 +557,33 @@ footer {
 </section>
 
 <!-- FINAL CTA -->
-<section class="final-cta">
+
+<section class="final-cta" id="contact">
   <div class="container">
-    <span class="section-label">Ready to Start?</span>
+    <span class="section-label" style="color:var(--gold);">Ready to Start?</span>
     <h2>Let's Talk About Your Home</h2>
-    <p>Request your free, no-obligation estimate today. We'll provide honest guidance on the best solutions for your home — and a clear price with no surprises.</p>
-    <a href="contact.html" class="btn">Get My Free Estimate</a>
-    <p style="margin-top:1.5rem; font-size:0.8rem; color:var(--neutral);">Serving Southlake · Colleyville · Westlake · Keller · Trophy Club &amp; surrounding DFW communities</p>
+    <p>Request your free, no-obligation estimate. We'll provide honest guidance and a clear price — with no surprises, no pressure.</p>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn">Get My Free Estimate</a>
+      <a href="tel:4438757617" class="btn btn-ghost">(443) 875-7617</a>
+    </div>
+    <p style="margin-top:2rem; font-size:0.75rem; color:rgba(255,255,255,0.2); letter-spacing:0.08em;">Serving All of Dallas–Fort Worth</p>
   </div>
 </section>
 
 <!-- FOOTER -->
+
 <footer>
   <div class="container">
     <div class="footer-grid">
       <div>
         <div class="footer-logo-name">Radiant Premier</div>
-        <div class="footer-logo-tag">Windows &amp; Doors</div>
-        <p class="footer-desc">Premium window and door replacement for discerning DFW homeowners. Built on trust, precision, and a commitment to lasting quality.</p>
+        <span class="footer-logo-tag">Windows &amp; Doors</span>
+        <p class="footer-desc">Premium window and door replacement for discerning DFW homeowners. Veteran and minority owned. Built on integrity, precision, and a commitment to lasting quality.</p>
+        <div class="footer-vet">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="#B8903A"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+          Veteran &amp; Minority Owned Business
+        </div>
       </div>
       <div class="footer-col">
         <h5>Navigate</h5>
@@ -788,16 +597,16 @@ footer {
       <div class="footer-col">
         <h5>Contact</h5>
         <ul>
-          <li><a href="tel:+18175550142">(817) 555-0142</a></li>
-          <li><a href="mailto:hello@radiantpremier.com">hello@radiantpremier.com</a></li>
-          <li><a href="#">Dallas–Fort Worth, TX</a></li>
-          <li><a href="#">Mon–Fri 8am–6pm</a></li>
+          <li><a href="tel:4438757617">(443) 875-7617</a></li>
+          <li><a href="mailto:info@radiantpremierwindows.com">info@radiantpremierwindows.com</a></li>
+          <li><span>Dallas–Fort Worth, TX</span></li>
+          <li><span>Mon–Fri 8am–6pm</span></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Radiant Premier Windows &amp; Doors. All rights reserved.</span>
-      <span>Licensed &amp; Insured · TDLR #XXXXXXX</span>
+      <span>Licensed &amp; Insured · Veteran &amp; Minority Owned</span>
     </div>
   </div>
 </footer>
@@ -807,5 +616,6 @@ function toggleMenu() {
   document.getElementById('mobileMenu').classList.toggle('open');
 }
 </script>
+
 </body>
 </html>
