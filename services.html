@@ -1,63 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services — Radiant Premier Windows &amp; Doors</title>
-  <meta name="description" content="Explore premium window and door replacement services from Radiant Premier Windows &amp; Doors, serving DFW homeowners with high-performance products and clean professional installation.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Radiant Premier Windows & Doors</title>
+  <meta name="description" content="Explore premium window and door replacement services from Radiant Premier Windows & Doors, serving DFW homeowners with high-performance products and clean professional installation." />
   <link rel="preconnect" href="<https://fonts.googleapis.com>">
   <link rel="preconnect" href="<https://fonts.gstatic.com>" crossorigin>
   <link href="<https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap>" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
   <style>
-    /* ── PAGE HERO — 2-col override ── */
+    .page-hero {
+      background: var(--navy);
+      padding: 7rem 0 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 80% 40%, rgba(139,30,30,0.08) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
     .page-hero-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 2rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 5rem;
       align-items: center;
+      position: relative;
+      z-index: 1;
     }
-    .page-hero .img-ph { min-height: 360px; }
 
-    /* ── SERVICES INTRO ── */
-    .services-intro { background: var(--white); }
+    .page-hero h1 {
+      color: var(--white);
+    }
+
+    .page-hero .lead {
+      color: rgba(255,255,255,0.45);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      margin-top: 1.2rem;
+      max-width: 480px;
+    }
+
+    .page-hero .img-ph {
+      min-height: 360px;
+    }
+
+    .page-hero-actions {
+      margin-top: 2.5rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .services-intro {
+      background: var(--white);
+    }
+
     .services-intro-inner {
       display: grid;
       grid-template-columns: 1.1fr 1fr;
       gap: 6rem;
       align-items: center;
     }
-    .services-intro .img-ph { min-height: 500px; }
-    .services-intro p { margin-bottom: 1.2rem; }
 
-    /* ── SERVICE CARDS ── */
-    .services-cards { background: var(--bg); }
-    .services-cards-wrap {
+    .services-intro .img-ph {
+      min-height: 520px;
+    }
+
+    .services-intro p {
+      margin-bottom: 1.2rem;
+    }
+
+    .services-grid {
+      background: var(--bg);
+    }
+
+    .services-grid-wrap {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1px;
       background: var(--neutral);
       margin-top: 3rem;
     }
+
     .service-card {
       background: var(--white);
       padding: 2.5rem 2rem;
       border-top: 3px solid var(--neutral);
-      transition: border-color 0.2s;
-      display: flex;
-      flex-direction: column;
+      transition: border-color 0.2s ease;
     }
-    .service-card:hover { border-top-color: var(--red); }
-    .service-card h3 { margin-bottom: 0.75rem; }
-    .service-card > p { font-size: 0.9rem; margin-bottom: 1.25rem; }
+
+    .service-card:hover {
+      border-top-color: var(--red);
+    }
+
+    .service-card h3 {
+      margin-bottom: 0.75rem;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      margin-bottom: 1.25rem;
+    }
+
     .service-list {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 0.65rem;
       margin-bottom: 1.75rem;
-      flex: 1;
     }
+
     .service-list li {
       display: flex;
       gap: 0.75rem;
@@ -65,8 +126,8 @@
       font-size: 0.84rem;
       color: var(--text);
       font-weight: 500;
-      line-height: 1.5;
     }
+
     .service-list li::before {
       content: '';
       display: block;
@@ -77,22 +138,47 @@
       flex-shrink: 0;
       margin-top: 8px;
     }
-    .service-card .btn { align-self: flex-start; margin-top: auto; }
 
-    /* ── BRAND SECTION ── */
-    .brand-section { background: var(--navy); padding: 6rem 0; }
-    .brand-header { max-width: 620px; margin-bottom: 3rem; }
-    .brand-header h2 { color: var(--white); }
-    .brand-header .divider { background: var(--gold); }
-    .brand-header p { color: rgba(255,255,255,0.45); }
+    .brand-section {
+      background: var(--navy);
+      padding: 6rem 0;
+    }
+
+    .brand-header {
+      max-width: 620px;
+    }
+
+    .brand-header h2 {
+      color: var(--white);
+    }
+
+    .brand-header .divider {
+      background: var(--gold);
+    }
+
+    .brand-header p {
+      color: rgba(255,255,255,0.45);
+    }
+
     .brand-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1px;
+      margin-top: 3rem;
       background: rgba(255,255,255,0.08);
     }
-    .brand-card { background: var(--navy); padding: 3rem 2.5rem; }
-    .brand-card h3 { color: var(--white); font-size: 1.6rem; margin-bottom: 0.4rem; }
+
+    .brand-card {
+      background: var(--navy);
+      padding: 3rem 2.5rem;
+    }
+
+    .brand-card h3 {
+      color: var(--white);
+      font-size: 1.6rem;
+      margin-bottom: 0.4rem;
+    }
+
     .brand-sub {
       display: block;
       font-size: 0.65rem;
@@ -102,17 +188,24 @@
       color: var(--gold);
       margin-bottom: 1.2rem;
     }
-    .brand-card p { color: rgba(255,255,255,0.48); font-size: 0.9rem; margin-bottom: 1rem; }
-    .brand-card p:last-child { margin-bottom: 0; }
 
-    /* ── COMPARISON TABLE ── */
-    .comparison { background: var(--bg); }
+    .brand-card p {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .comparison {
+      background: var(--bg);
+    }
+
     .compare-table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 3rem;
       font-size: 0.88rem;
     }
+
     .compare-table th {
       text-align: left;
       padding: 1rem 1.5rem;
@@ -122,198 +215,275 @@
       letter-spacing: 0.14em;
       text-transform: uppercase;
       background: var(--navy);
-      color: rgba(255,255,255,0.45);
+      color: rgba(255,255,255,0.5);
     }
-    .compare-table th.hl { background: var(--red); color: var(--white); }
+
+    .compare-table th.hl {
+      background: var(--red);
+      color: var(--white);
+    }
+
     .compare-table td {
       padding: 1rem 1.5rem;
       border-bottom: 1px solid var(--neutral);
       color: var(--text-secondary);
-      vertical-align: top;
     }
-    .compare-table td:first-child { font-weight: 600; color: var(--text); }
-    .compare-table td.hl { color: var(--text); font-weight: 600; background: rgba(139,30,30,0.04); }
-    .compare-table tr:last-child td { border-bottom: none; }
-    .yes { color: var(--red); font-weight: 700; }
-    .no  { color: var(--neutral); }
 
-    /* ── PAGE CTA ── */
-    .svc-cta { background: var(--navy-deep); text-align: center; padding: 7rem 0; }
-    .svc-cta h2 { color: var(--white); margin-bottom: 1rem; }
-    .svc-cta > .container > p { color: rgba(255,255,255,0.42); max-width: 540px; margin: 0 auto 2.5rem; }
-    .svc-cta .section-label { color: var(--gold); }
+    .compare-table td:first-child {
+      font-weight: 600;
+      color: var(--text);
+    }
 
-    /* ── RESPONSIVE ── */
+    .compare-table td.hl {
+      color: var(--text);
+      font-weight: 600;
+      background: rgba(139,30,30,0.04);
+    }
+
+    .compare-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .yes {
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    .no {
+      color: var(--neutral);
+    }
+
+    .svc-cta {
+      background: var(--navy-deep);
+      text-align: center;
+      padding: 7rem 0;
+    }
+
+    .svc-cta h2 {
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .svc-cta p {
+      color: rgba(255,255,255,0.45);
+      max-width: 540px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .svc-cta .section-label {
+      color: var(--gold);
+    }
+
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
     @media (max-width: 900px) {
       .page-hero-inner,
-      .services-intro-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .services-intro-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
       .page-hero .img-ph,
-      .services-intro .img-ph { min-height: 280px; }
-      .services-cards-wrap,
-      .brand-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 600px) {
-      .compare-table { font-size: 0.8rem; }
-      .compare-table th,
-      .compare-table td { padding: 0.75rem 1rem; }
+      .services-intro .img-ph {
+        min-height: 280px;
+      }
+
+      .services-grid-wrap,
+      .brand-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="logo">
-      <span class="logo-name">Radiant Premier</span>
-      <span class="logo-tag">Windows &amp; Doors</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="story.html">Our Story</a></li>
-      <li><a href="services.html" class="active">Services</a></li>
-      <li><a href="contact.html" class="nav-cta">Get Free Estimate</a></li>
-    </ul>
-    <div class="vet-badge">
-      <svg viewBox="0 0 24 24" fill="#B8903A" width="11" height="11"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
-      Veteran &amp; Minority Owned
-    </div>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="story.html">Our Story</a>
-  <a href="services.html">Services</a>
-  <a href="contact.html">Get Free Estimate</a>
-</div>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-name">Radiant Premier</span>
+        <span class="logo-tag">Windows &amp; Doors</span>
+      </a>
 
-<!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="page-hero-inner">
-    <div>
-      <span class="section-label section-label-gold">Our Services</span>
-      <h1>Premium Products. Clean Installation. Real Long-Term Value.</h1>
-      <p class="lead">We help DFW homeowners upgrade the performance, appearance, and comfort of their homes with premium window and door solutions installed with care and precision.</p>
-      <div class="page-hero-actions">
-        <a href="contact.html" class="btn">Get Free Estimate</a>
-        <a href="tel:+14438757617" class="btn btn-outline">(443) 875-7617</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="story.html">Our Story</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="contact.html" class="nav-cta">Get Free Estimate</a></li>
+      </ul>
+
+      <div class="vet-badge">
+        Veteran &amp; Minority Owned
       </div>
-    </div>
-    <div class="img-ph">
-      <strong>Services Hero Image</strong>
-      Premium DFW home exterior —<br>fresh windows, clean lines
-    </div>
-  </div>
-</section>
 
-<!-- INTRO -->
-<section class="services-intro">
-  <div class="container">
-    <div class="services-intro-inner">
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="story.html">Our Story</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Get Free Estimate</a>
+  </div>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
       <div>
-        <span class="section-label">What We Offer</span>
-        <h2>Focused Service. Strong Products. No Guesswork.</h2>
-        <div class="divider"></div>
-        <p>We do not try to be everything to everyone. We focus on the products and services we trust, and we install them with the kind of attention to detail homeowners should expect when they are making a serious investment in their home.</p>
-        <p>Whether you are replacing drafty builder-grade windows, upgrading your front entry, or improving a patio opening, our goal is the same: deliver a better product, a cleaner installation, and an experience that feels professional from start to finish.</p>
-        <p>We work with carefully selected manufacturing partners and stay focused on solutions that make sense for the home, the homeowner, and the long term.</p>
+        <span class="section-label section-label-gold">Our Services</span>
+        <h1>Premium Products. Clean Installation. Real Long-Term Value.</h1>
+        <p class="lead">
+          We help DFW homeowners upgrade the performance, appearance, and comfort of their homes with premium window and door solutions installed with care and precision.
+        </p>
+        <div class="page-hero-actions">
+          <a href="contact.html" class="btn">Get Free Estimate</a>
+          <a href="tel:+14438757617" class="btn btn-outline">(443) 875-7617</a>
+        </div>
       </div>
+
       <div class="img-ph">
-        <strong>Project Image</strong>
-        Finished installation or<br>premium product detail shot
+        <strong>Services Hero Image</strong>
+        Add a premium exterior or interior home image here
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- SERVICE CARDS -->
-<section class="services-cards">
-  <div class="container">
-    <span class="section-label">Service Categories</span>
-    <h2>Where We Specialize</h2>
-    <div class="divider"></div>
-    <div class="services-cards-wrap">
+  <section class="services-intro">
+    <div class="container">
+      <div class="services-intro-inner">
+        <div>
+          <span class="section-label">What We Offer</span>
+          <h2>Focused Service. Strong Products. No Guesswork.</h2>
+          <div class="divider"></div>
 
-      <div class="service-card">
-        <h3>Window Replacement</h3>
-        <p>High-performance windows designed to improve energy efficiency, comfort, curb appeal, and long-term durability.</p>
-        <ul class="service-list">
-          <li>Energy-efficient triple-pane glass packages</li>
-          <li>Cleaner sightlines and better natural light</li>
-          <li>Reduced drafts and improved year-round comfort</li>
-          <li>Custom sizing for your home's openings</li>
-          <li>Factory-certified installation on every job</li>
-        </ul>
-        <a href="contact.html" class="btn">Request Window Estimate</a>
+          <p>
+            We do not try to be everything to everyone. We focus on the products and services we trust, and we install them with the kind of attention to detail homeowners should expect when they are making a serious investment in their home.
+          </p>
+
+          <p>
+            Whether you are replacing drafty builder-grade windows, upgrading your front entry, or improving a patio opening, our goal is the same: deliver a better product, a cleaner installation, and an experience that feels professional from start to finish.
+          </p>
+
+          <p>
+            We work with carefully selected manufacturing partners and stay focused on solutions that make sense for the home, the homeowner, and the long term.
+          </p>
+        </div>
+
+        <div class="img-ph">
+          <strong>Project Image</strong>
+          Add an installation or finished project photo here
+        </div>
       </div>
-
-      <div class="service-card">
-        <h3>Entry Door Replacement</h3>
-        <p>Premium entry doors that elevate curb appeal, security, insulation, and the overall first impression of your home.</p>
-        <ul class="service-list">
-          <li>ProVia fiberglass and steel options</li>
-          <li>Stronger security and structural performance</li>
-          <li>Custom fit and finish selections</li>
-          <li>Improved weather sealing and efficiency</li>
-          <li>More polished and upscale entry appearance</li>
-        </ul>
-        <a href="contact.html" class="btn">Request Door Estimate</a>
-      </div>
-
-      <div class="service-card">
-        <h3>Patio &amp; Sliding Doors</h3>
-        <p>Patio door upgrades that improve function, light, outdoor access, and the overall feel of your living space.</p>
-        <ul class="service-list">
-          <li>Smooth operation and tighter weather sealing</li>
-          <li>Modern, cleaner-looking frames</li>
-          <li>Better performance in DFW heat and cold</li>
-          <li>Improved view and natural light</li>
-          <li>Options for large and custom openings</li>
-        </ul>
-        <a href="contact.html" class="btn">Request Patio Door Estimate</a>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- BRAND PARTNERS -->
-<section class="brand-section">
-  <div class="container">
-    <div class="brand-header">
-      <span class="section-label section-label-gold">Our Brand Partners</span>
-      <h2>Products We Trust and Know Well</h2>
+  <section class="services-grid">
+    <div class="container">
+      <span class="section-label">Service Categories</span>
+      <h2>Where We Specialize</h2>
       <div class="divider"></div>
-      <p>We do not carry a huge catalog just to cover every possible price point. We focus on brands we trust because we know the product, the performance, and the level of quality homeowners can expect.</p>
-    </div>
-    <div class="brand-grid">
-      <div class="brand-card">
-        <h3>Alside</h3>
-        <span class="brand-sub">Window Partner</span>
-        <p>Alside brings the engineering, consistency, and product depth we want behind our window offerings. Their systems are designed for performance, efficiency, and long-term durability.</p>
-        <p>We recommend Alside when homeowners want stronger thermal performance, cleaner lines, and a window system we can confidently stand behind.</p>
-      </div>
-      <div class="brand-card">
-        <h3>ProVia</h3>
-        <span class="brand-sub">Door Partner</span>
-        <p>ProVia is known for premium craftsmanship, thoughtful construction, and beautiful finished products. Their entry and patio doors offer the combination of curb appeal, insulation, and strength that high-end homes deserve.</p>
-        <p>We trust ProVia because their standards align with ours: better materials, better build quality, and better long-term results.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- COMPARISON TABLE -->
-<section class="comparison">
-  <div class="container">
-    <span class="section-label">Why It Matters</span>
-    <h2>The Difference Is in the Details</h2>
-    <div class="divider"></div>
-    <p>A premium product only matters if the installation, communication, and follow-through match it. That's where we separate ourselves from the average contractor experience.</p>
-    <div style="overflow-x:auto;">
+      <div class="services-grid-wrap">
+        <div class="service-card">
+          <h3>Window Replacement</h3>
+          <p>
+            High-performance windows designed to improve energy efficiency, comfort, curb appeal, and long-term durability.
+          </p>
+          <ul class="service-list">
+            <li>Energy-efficient glass packages</li>
+            <li>Cleaner sightlines and better natural light</li>
+            <li>Reduced drafts and improved comfort</li>
+            <li>Custom sizing for your home's openings</li>
+            <li>Professional installation with clean finish work</li>
+          </ul>
+          <a href="contact.html" class="btn">Request Window Estimate</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Entry Door Replacement</h3>
+          <p>
+            Premium entry doors that elevate curb appeal, security, insulation, and the overall first impression of your home.
+          </p>
+          <ul class="service-list">
+            <li>Fiberglass and steel options</li>
+            <li>Stronger security and structural performance</li>
+            <li>Custom fit and finish selections</li>
+            <li>Improved weather sealing and efficiency</li>
+            <li>More polished and upscale entry appearance</li>
+          </ul>
+          <a href="contact.html" class="btn">Request Door Estimate</a>
+        </div>
+
+        <div class="service-card">
+          <h3>Patio &amp; Sliding Doors</h3>
+          <p>
+            Patio door upgrades that improve function, light, outdoor access, and the overall feel of your living space.
+          </p>
+          <ul class="service-list">
+            <li>Smooth operation and tighter sealing</li>
+            <li>Modern, cleaner-looking frames</li>
+            <li>Better performance in heat and cold</li>
+            <li>Improved view and natural light</li>
+            <li>Options for large and custom openings</li>
+          </ul>
+          <a href="contact.html" class="btn">Request Patio Door Estimate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-section">
+    <div class="container">
+      <div class="brand-header">
+        <span class="section-label" style="color: rgba(184,144,58,0.8);">Our Brand Partners</span>
+        <h2>We Keep It Simple: Products We Trust and Know Well</h2>
+        <div class="divider" style="background: var(--gold);"></div>
+        <p>
+          We do not carry a huge catalog just to cover every possible price point. We focus on brands we trust because we know the product, the performance, and the level of quality homeowners can expect.
+        </p>
+      </div>
+
+      <div class="brand-grid">
+        <div class="brand-card">
+          <h3>Alside</h3>
+          <span class="brand-sub">Window Partner</span>
+          <p>
+            Alside brings the engineering, consistency, and product depth we want behind our window offerings. Their systems are designed for performance, efficiency, and long-term durability.
+          </p>
+          <p>
+            We recommend Alside when homeowners want stronger thermal performance, cleaner lines, and a window system we can confidently stand behind.
+          </p>
+        </div>
+
+        <div class="brand-card">
+          <h3>ProVia</h3>
+          <span class="brand-sub">Door Partner</span>
+          <p>
+            ProVia is known for premium craftsmanship, thoughtful construction, and beautiful finished products. Their entry and patio doors offer the combination of curb appeal, insulation, and strength that high-end homes deserve.
+          </p>
+          <p>
+            We trust ProVia because their standards align with ours: better materials, better build quality, and better long-term results.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="comparison">
+    <div class="container">
+      <span class="section-label">Why It Matters</span>
+      <h2>The Difference Is in the Details</h2>
+      <div class="divider"></div>
+      <p>
+        A premium product only matters if the installation, communication, and follow-through match it. That's where we separate ourselves from the average contractor experience.
+      </p>
+
       <table class="compare-table">
         <thead>
           <tr>
@@ -336,7 +506,7 @@
           <tr>
             <td>Communication</td>
             <td class="no">Inconsistent</td>
-            <td class="hl yes">Clear and direct throughout</td>
+            <td class="hl yes">Clear and direct</td>
           </tr>
           <tr>
             <td>Long-term value</td>
@@ -351,66 +521,66 @@
         </tbody>
       </table>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- PAGE CTA -->
-<section class="svc-cta">
-  <div class="container">
-    <span class="section-label">Ready to Start?</span>
-    <h2>Let's Talk About the Right Fit for Your Home</h2>
-    <p>We'll learn about your project, walk you through the options that make sense, and provide a clear estimate without pressure or guesswork.</p>
-    <div class="cta-actions">
-      <a href="contact.html" class="btn">Get My Free Estimate</a>
-      <a href="tel:+14438757617" class="btn btn-outline">(443) 875-7617</a>
+  <section class="svc-cta">
+    <div class="container">
+      <span class="section-label">Ready to Start?</span>
+      <h2>Let's Talk About the Right Fit for Your Home</h2>
+      <p>
+        We'll learn about your project, walk you through the options that make sense, and provide a clear estimate without pressure or guesswork.
+      </p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn">Get My Free Estimate</a>
+        <a href="tel:+14438757617" class="btn btn-outline">(443) 875-7617</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo-name">Radiant Premier</div>
-        <span class="footer-logo-tag">Windows &amp; Doors</span>
-        <p class="footer-desc">Premium window and door replacement for discerning DFW homeowners. Veteran and minority owned. Built on integrity, precision, and a commitment to lasting quality.</p>
-        <div class="footer-vet">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="#B8903A"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
-          Veteran &amp; Minority Owned Business
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo-name">Radiant Premier</div>
+          <span class="footer-logo-tag">Windows &amp; Doors</span>
+          <p class="footer-desc">
+            Premium window and door replacement for discerning DFW homeowners. Veteran and minority owned. Built on integrity, precision, and a commitment to lasting quality.
+          </p>
+          <div class="footer-vet">Veteran &amp; Minority Owned Business</div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Navigate</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="story.html">Our Story</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="tel:+14438757617">(443) 875-7617</a></li>
+            <li><a href="mailto:info@radiantpremierwindows.com">info@radiantpremierwindows.com</a></li>
+            <li><span>Dallas–Fort Worth, TX</span></li>
+            <li><span>Mon–Fri 8am–6pm</span></li>
+          </ul>
         </div>
       </div>
-      <div class="footer-col">
-        <h5>Navigate</h5>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="story.html">Our Story</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Contact</h5>
-        <ul>
-          <li><a href="tel:+14438757617">(443) 875-7617</a></li>
-          <li><a href="mailto:info@radiantpremierwindows.com">info@radiantpremierwindows.com</a></li>
-          <li><span>Dallas–Fort Worth, TX</span></li>
-          <li><span>Mon–Fri 8am–6pm CST</span></li>
-        </ul>
+
+      <div class="footer-bottom">
+        <span>© 2026 Radiant Premier Windows &amp; Doors. All rights reserved.</span>
+        <span>Licensed &amp; Insured · Veteran &amp; Minority Owned</span>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Radiant Premier Windows &amp; Doors. All rights reserved.</span>
-      <span>Licensed &amp; Insured &middot; Veteran &amp; Minority Owned</span>
-    </div>
-  </div>
-</footer>
+  </footer>
 
-<script>
-  function toggleMenu() {
-    document.getElementById('mobileMenu').classList.toggle('open');
-  }
-</script>
-
+  <script>
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+  </script>
 </body>
 </html>
