@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get a Free Estimate — Radiant Premier Windows & Doors</title>
+  <meta name="description" content="Request a free estimate from Radiant Premier Windows & Doors. Serving DFW homeowners with premium windows, doors, and clean professional installation." />
+  <link rel="preconnect" href="<https://fonts.googleapis.com>">
+  <link rel="preconnect" href="<https://fonts.gstatic.com>" crossorigin>
+  <link href="<https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap>" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .hero {
+      background: var(--navy-deep);
+      padding: 6rem 0 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 20% 60%, rgba(184,144,58,.07) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      color: rgba(255,255,255,.45);
+      font-size: 1rem;
+      max-width: 460px;
+    }
+
+    .hero-contact-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: rgba(255,255,255,.06);
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,.03);
+      padding: 1.8rem 2rem;
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+      text-decoration: none;
+      transition: background .2s;
+    }
+
+    .contact-card:hover {
+      background: rgba(255,255,255,.07);
+    }
+
+    .contact-icon {
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(184,144,58,.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-icon svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .contact-card-label {
+      font-size: .6rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.3);
+      margin-bottom: .25rem;
+      display: block;
+    }
+
+    .contact-card-val {
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .main-layout {
+      padding: 5rem 0 6rem;
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .form-wrap {
+      background: var(--white);
+      padding: 3rem;
+    }
+
+    .form-title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: .5rem;
+    }
+
+    .form-sub {
+      font-size: .85rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      font-family: var(--font-sans);
+      font-size: .9rem;
+      color: var(--text);
+      background: var(--bg);
+      border: 1px solid var(--neutral);
+      border-radius: var(--radius);
+      padding: .85rem 1rem;
+      transition: border-color .2s, box-shadow .2s;
+      outline: none;
+      width: 100%;
+      -webkit-appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(28,42,57,.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 110px;
+      line-height: 1.6;
+    }
+
+    .form-group select {
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='<http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.5' fill='none>' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: .7rem;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      cursor: pointer;
+    }
+
+    .checkbox-item input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--red);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .checkbox-item span {
+      font-size: .85rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .form-divider {
+      height: 1px;
+      background: var(--neutral);
+      margin: 1.5rem 0;
+    }
+
+    .btn-submit {
+      display: block;
+      width: 100%;
+      background: var(--red);
+      color: var(--white);
+      font-family: var(--font-sans);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: 1.1rem 2rem;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background .2s, transform .15s;
+      margin-top: .5rem;
+    }
+
+    .btn-submit:hover {
+      background: var(--red-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .form-disclaimer {
+      font-size: .72rem;
+      color: #8b8b8b;
+      text-align: center;
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+
+    .success-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+
+    .success-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .form-success h3 {
+      font-size: 1.5rem;
+      margin-bottom: .75rem;
+    }
+
+    .form-success p {
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .form-error-box {
+      display: none;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #991b1b;
+      padding: .9rem 1.2rem;
+      font-size: .82rem;
+      border-radius: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .expect-card,
+    .areas-card {
+      background: var(--white);
+      padding: 2.2rem;
+    }
+
+    .areas-card {
+      border-top: 3px solid var(--gold);
+    }
+
+    .expect-card h3,
+    .areas-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .expect-steps {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .expect-step {
+      display: flex;
+      gap: 1.2rem;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--neutral);
+    }
+
+    .expect-step:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .step-num {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--neutral);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 24px;
+    }
+
+    .step-text strong {
+      display: block;
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .step-text span {
+      font-size: .8rem;
+      color: var(--text-secondary);
+    }
+
+    .guarantee-card {
+      background: var(--navy);
+      padding: 2.2rem;
+    }
+
+    .guarantee-card h3 {
+      color: var(--white);
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .guarantee-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+      margin-top: 1rem;
+    }
+
+    .guarantee-list li {
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+      font-size: .83rem;
+      color: rgba(255,255,255,.55);
+    }
+
+    .guarantee-list li::before {
+      content: '';
+      display: block;
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    .areas-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    .area-tag {
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      color: var(--text-secondary);
+      background: var(--bg);
+      border: 1px solid var(--neutral);
+      padding: .35rem .75rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner,
+      .main-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-name">Radiant Premier</span>
+        <span class="logo-tag">Windows &amp; Doors</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="story.html">Our Story</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" class="nav-cta active">Get Free Estimate</a></li>
+      </ul>
+
+      <div class="vet-badge">
+        Veteran &amp; Minority Owned
+      </div>
+
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="story.html">Our Story</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Get Free Estimate</a>
+  </div>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="section-label" style="color: rgba(184,144,58,.8);">Free, No-Obligation</span>
+        <h1>Let's Talk About Your Home</h1>
+        <p>
+          Tell us about your project and we'll reach out within one business day to schedule your free in-home estimate. No pressure, no sales tactics, and no wasted time.
+        </p>
+      </div>
+
+      <div class="hero-contact-cards">
+        <a href="tel:+14438757617" class="contact-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <span class="contact-card-label">Call Us Directly</span>
+            <div class="contact-card-val">(443) 875-7617</div>
+          </div>
+        </a>
+
+        <a href="mailto:info@radiantpremierwindows.com" class="contact-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <span class="contact-card-label">Email Us</span>
+            <div class="contact-card-val" style="font-size: .82rem;">info@radiantpremierwindows.com</div>
+          </div>
+        </a>
+
+        <div class="contact-card" style="cursor: default;">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <span class="contact-card-label">Office Hours</span>
+            <div class="contact-card-val">Mon–Fri, 8am–6pm</div>
+          </div>
+        </div>
+
+        <div class="contact-card" style="cursor: default;">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <span class="contact-card-label">Service Area</span>
+            <div class="contact-card-val">All of Dallas–Fort Worth</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="main-layout">
+    <div class="container">
+      <div class="main-grid">
+
+        <div class="form-wrap" id="formWrap">
+          <div class="form-title">Request Your Free Estimate</div>
+          <p class="form-sub">
+            We'll review your project and reach out within one business day to schedule a time that works for you.
+          </p>
+
+          <form id="estimateForm" action="<https://formspree.io/f/xnjlbnbq>" method="POST" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Margaret" required>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Thompson" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone *</label>
+                <input type="tel" id="phone" name="phone" placeholder="(817) 000-0000" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="you@email.com" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="address">Home Address / City *</label>
+              <input type="text" id="address" name="address" placeholder="Southlake, TX" required>
+            </div>
+
+            <div class="form-divider"></div>
+
+            <div class="form-group">
+              <label>What Are You Looking to Replace? *</label>
+              <div class="checkbox-group">
+                <label class="checkbox-item"><input type="checkbox" name="project[]" value="windows"><span>Windows</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="project[]" value="entry-doors"><span>Entry Doors</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="project[]" value="patio-doors"><span>Patio / Sliding Doors</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="project[]" value="full-home"><span>Full Home — Windows &amp; Doors</span></label>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="windowCount">Approximate # of Windows</label>
+                <select id="windowCount" name="windowCount">
+                  <option value="">Select...</option>
+                  <option>1–5</option>
+                  <option>6–10</option>
+                  <option>11–15</option>
+                  <option>16–20</option>
+                  <option>20+</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="homeAge">Home Age (approx.)</label>
+                <select id="homeAge" name="homeAge">
+                  <option value="">Select...</option>
+                  <option>Less than 10 years</option>
+                  <option>10–20 years</option>
+                  <option>20–30 years</option>
+                  <option>30+ years</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="timeline">Desired Timeline</label>
+              <select id="timeline" name="timeline">
+                <option value="">Select...</option>
+                <option>As soon as possible</option>
+                <option>Within 1–3 months</option>
+                <option>3–6 months</option>
+                <option>Just exploring options</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="source">How Did You Hear About Us?</label>
+              <select id="source" name="source">
+                <option value="">Select...</option>
+                <option>Neighbor or friend referral</option>
+                <option>Google search</option>
+                <option>Social media</option>
+                <option>Saw work in my neighborhood</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Anything Else We Should Know?</label>
+              <textarea id="message" name="message" placeholder="Tell us about specific windows or doors, any concerns about your home, style preferences, etc."></textarea>
+            </div>
+
+            <input type="hidden" name="_subject" value="New Estimate Request — Radiant Premier Windows & Doors">
+            <input type="hidden" name="_captcha" value="false">
+
+            <div id="formError" class="form-error-box"></div>
+
+            <button type="submit" class="btn-submit" id="submitBtn">Send My Estimate Request →</button>
+            <p class="form-disclaimer">
+              We respect your privacy. Your information is never sold or shared. We'll only contact you about your estimate request.
+            </p>
+          </form>
+
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3>Request Received</h3>
+            <p style="margin-bottom: 1.5rem;">
+              Thank you — we'll be in touch within one business day to schedule your free in-home estimate.
+            </p>
+            <p style="font-size: .82rem;">
+              Questions in the meantime? Call us at
+              <a href="tel:+14438757617" style="color: var(--red); font-weight: 600;">(443) 875-7617</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="sidebar">
+          <div class="expect-card">
+            <span class="section-label">What to Expect</span>
+            <h3>Your Estimate, Step by Step</h3>
+            <ul class="expect-steps">
+              <li class="expect-step">
+                <div class="step-num">1</div>
+                <div class="step-text">
+                  <strong>We Reach Out</strong>
+                  <span>Within one business day, we'll call or email to confirm your request and find a time that works for you.</span>
+                </div>
+              </li>
+              <li class="expect-step">
+                <div class="step-num">2</div>
+                <div class="step-text">
+                  <strong>Free In-Home Visit</strong>
+                  <span>We visit your home, take measurements, assess your openings, and listen to what matters most to you.</span>
+                </div>
+              </li>
+              <li class="expect-step">
+                <div class="step-num">3</div>
+                <div class="step-text">
+                  <strong>Clear Proposal</strong>
+                  <span>We present honest options with transparent pricing — no add-ons, no bait-and-switch, no pressure.</span>
+                </div>
+              </li>
+              <li class="expect-step">
+                <div class="step-num">4</div>
+                <div class="step-text">
+                  <strong>You Decide</strong>
+                  <span>No obligation, ever. If you're ready to move forward, we'll take it from there. If not, no hard feelings.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="guarantee-card">
+            <span style="font-size: .6rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: rgba(184,144,58,.8); margin-bottom: .75rem; display: block;">Our Promise to You</span>
+            <h3>No Pressure. No Surprises.</h3>
+            <ul class="guarantee-list">
+              <li>Your estimate visit is completely free and carries zero obligation</li>
+              <li>The price we quote is the price you pay — no surprise add-ons at install</li>
+              <li>No subcontractors — your project is handled by our own team</li>
+              <li>We won't recommend products you don't need</li>
+              <li>Lifetime labor warranty on every installation we complete</li>
+            </ul>
+          </div>
+
+          <div class="areas-card">
+            <span class="section-label">Service Area</span>
+            <h3>Serving All of DFW</h3>
+            <p style="font-size: .85rem; margin-bottom: 1.2rem;">We serve homeowners across the Dallas–Fort Worth metroplex, including:</p>
+            <div class="areas-grid">
+              <span class="area-tag">Southlake</span>
+              <span class="area-tag">Colleyville</span>
+              <span class="area-tag">Westlake</span>
+              <span class="area-tag">Keller</span>
+              <span class="area-tag">Trophy Club</span>
+              <span class="area-tag">Frisco</span>
+              <span class="area-tag">Plano</span>
+              <span class="area-tag">McKinney</span>
+              <span class="area-tag">Flower Mound</span>
+              <span class="area-tag">Grapevine</span>
+              <span class="area-tag">Coppell</span>
+              <span class="area-tag">Argyle</span>
+              <span class="area-tag">Prosper</span>
+              <span class="area-tag">Allen</span>
+              <span class="area-tag">Celina</span>
+              <span class="area-tag">+ All DFW</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo-name">Radiant Premier</div>
+          <span class="footer-logo-tag">Windows &amp; Doors</span>
+          <p class="footer-desc">Premium window and door replacement for discerning DFW homeowners. Veteran and minority owned. Built on integrity, precision, and a commitment to lasting quality.</p>
+          <div class="footer-vet">Veteran &amp; Minority Owned Business</div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Navigate</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="story.html">Our Story</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="tel:+14438757617">(443) 875-7617</a></li>
+            <li><a href="mailto:info@radiantpremierwindows.com">info@radiantpremierwindows.com</a></li>
+            <li><span>Dallas–Fort Worth, TX</span></li>
+            <li><span>Mon–Fri 8am–6pm</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Radiant Premier Windows &amp; Doors. All rights reserved.</span>
+        <span>Licensed &amp; Insured · Veteran &amp; Minority Owned</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+
+    const form = document.getElementById('estimateForm');
+    const formSuccess = document.getElementById('formSuccess');
+    const formError = document.getElementById('formError');
+    const submitBtn = document.getElementById('submitBtn');
+
+    function showError(message) {
+      formError.textContent = message;
+      formError.style.display = 'block';
+      formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      formError.style.display = 'none';
+
+      const firstName = document.getElementById('firstName').value.trim();
+      const lastName = document.getElementById('lastName').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const address = document.getElementById('address').value.trim();
+      const projects = [...document.querySelectorAll('input[name="project[]"]:checked')];
+
+      if (!firstName || !lastName) {
+        showError('Please enter your full name.');
+        return;
+      }
+
+      if (!phone) {
+        showError('Please enter your phone number.');
+        return;
+      }
+
+      if (!email || !email.includes('@')) {
+        showError('Please enter a valid email address.');
+        return;
+      }
+
+      if (!address) {
+        showError('Please enter your city or address so we can confirm your service area.');
+        return;
+      }
+
+      if (projects.length === 0) {
+        showError('Please select at least one project type.');
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      try {
+        const formData = new FormData(form);
+
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          form.style.display = 'none';
+          formSuccess.style.display = 'block';
+          formSuccess.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          showError('Something went wrong while sending your request. Please try again.');
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send My Estimate Request →';
+        }
+      } catch (error) {
+        showError('Something went wrong while sending your request. Please check your connection and try again.');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send My Estimate Request →';
+      }
+    });
+  </script>
+</body>
+</html>
