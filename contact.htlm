@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Get a Free Estimate — Radiant Premier Windows & Doors</title>
   <meta name="description" content="Request a free estimate from Radiant Premier Windows & Doors. Serving DFW homeowners with premium windows, doors, and clean professional installation." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="<https://fonts.googleapis.com>">
+  <link rel="preconnect" href="<https://fonts.gstatic.com>" crossorigin>
+  <link href="<https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap>" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <style>
     .hero {
@@ -186,7 +186,7 @@
 
     .form-group select {
       cursor: pointer;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='<http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.5' fill='none>' stroke-linecap='round'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: right 1rem center;
       padding-right: 2.5rem;
@@ -476,9 +476,9 @@
     <div class="hero-inner">
       <div>
         <span class="section-label" style="color: rgba(184,144,58,.8);">Free, No-Obligation</span>
-        <h1>Let’s Talk About Your Home</h1>
+        <h1>Let's Talk About Your Home</h1>
         <p>
-          Tell us about your project and we’ll reach out within one business day to schedule your free in-home estimate. No pressure, no sales tactics, and no wasted time.
+          Tell us about your project and we'll reach out within one business day to schedule your free in-home estimate. No pressure, no sales tactics, and no wasted time.
         </p>
       </div>
 
@@ -533,10 +533,10 @@
         <div class="form-wrap" id="formWrap">
           <div class="form-title">Request Your Free Estimate</div>
           <p class="form-sub">
-            We’ll review your project and reach out within one business day to schedule a time that works for you.
+            We'll review your project and reach out within one business day to schedule a time that works for you.
           </p>
 
-          <form id="estimateForm" action="https://formspree.io/f/xnjlbnbq" method="POST" novalidate>
+          <form id="estimateForm" action="<https://formspree.io/f/xnjlbnbq>" method="POST" novalidate>
             <div class="form-row">
               <div class="form-group">
                 <label for="firstName">First Name *</label>
@@ -636,7 +636,7 @@
 
             <button type="submit" class="btn-submit" id="submitBtn">Send My Estimate Request →</button>
             <p class="form-disclaimer">
-              We respect your privacy. Your information is never sold or shared. We’ll only contact you about your estimate request.
+              We respect your privacy. Your information is never sold or shared. We'll only contact you about your estimate request.
             </p>
           </form>
 
@@ -646,7 +646,7 @@
             </div>
             <h3>Request Received</h3>
             <p style="margin-bottom: 1.5rem;">
-              Thank you — we’ll be in touch within one business day to schedule your free in-home estimate.
+              Thank you — we'll be in touch within one business day to schedule your free in-home estimate.
             </p>
             <p style="font-size: .82rem;">
               Questions in the meantime? Call us at
@@ -664,7 +664,7 @@
                 <div class="step-num">1</div>
                 <div class="step-text">
                   <strong>We Reach Out</strong>
-                  <span>Within one business day, we’ll call or email to confirm your request and find a time that works for you.</span>
+                  <span>Within one business day, we'll call or email to confirm your request and find a time that works for you.</span>
                 </div>
               </li>
               <li class="expect-step">
@@ -685,7 +685,7 @@
                 <div class="step-num">4</div>
                 <div class="step-text">
                   <strong>You Decide</strong>
-                  <span>No obligation, ever. If you’re ready to move forward, we’ll take it from there. If not, no hard feelings.</span>
+                  <span>No obligation, ever. If you're ready to move forward, we'll take it from there. If not, no hard feelings.</span>
                 </div>
               </li>
             </ul>
@@ -698,7 +698,7 @@
               <li>Your estimate visit is completely free and carries zero obligation</li>
               <li>The price we quote is the price you pay — no surprise add-ons at install</li>
               <li>No subcontractors — your project is handled by our own team</li>
-              <li>We won’t recommend products you don’t need</li>
+              <li>We won't recommend products you don't need</li>
               <li>Lifetime labor warranty on every installation we complete</li>
             </ul>
           </div>
