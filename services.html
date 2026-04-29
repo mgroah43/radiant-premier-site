@@ -3,584 +3,966 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services — Radiant Premier Windows &amp; Doors</title>
-  <meta name="description" content="Explore premium window and door replacement services from Radiant Premier Windows &amp; Doors, serving DFW homeowners with high-performance products and clean professional installation." />
+  <title>Services — Radiant Premier Windows & Doors</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
   <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #F7F5F2;
+      --white: #FFFFFF;
+      --text: #181818;
+      --text-secondary: #5E5E5E;
+      --red: #8B1E1E;
+      --red-dark: #6e1818;
+      --navy: #1C2A39;
+      --navy-deep: #111E2A;
+      --neutral: #D6D1C4;
+      --gold: #B8903A;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Montserrat', Helvetica, sans-serif;
+      --max: 1160px;
+      --radius: 2px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+    nav { background: var(--navy-deep); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: var(--max); margin: 0 auto; padding: 0 2rem; height: 72px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; flex-direction: column; gap: 1px; text-decoration: none; }
+    .logo-name { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 600; color: var(--white); letter-spacing: 0.02em; line-height: 1; }
+    .logo-tag { font-size: 0.56rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.65); transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); }
+    .nav-cta { background: var(--red) !important; color: var(--white) !important; padding: 0.6rem 1.4rem; border-radius: var(--radius); }
+    .nav-cta:hover { background: var(--red-dark) !important; }
+    .vet-badge { display: flex; align-items: center; gap: 0.5rem; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(184,144,58,0.35); padding: 0.3rem 0.75rem; border-radius: 2px; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--white); transition: all 0.3s; }
+    .mobile-menu { display: none; position: fixed; inset: 72px 0 0 0; background: var(--navy-deep); padding: 2rem; z-index: 99; flex-direction: column; gap: 1.5rem; }
+    .mobile-menu a { font-size: 1.1rem; font-family: var(--font-serif); color: rgba(255,255,255,0.8); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 1rem; }
+    .mobile-menu.open { display: flex; }
+
+    .btn { display: inline-block; background: var(--red); color: var(--white); font-family: var(--font-sans); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 1rem 2.2rem; border: none; border-radius: var(--radius); cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+    .btn:hover { background: var(--red-dark); transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.25); }
+    .btn-outline:hover { background: rgba(255,255,255,0.06); }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+    section { padding: 6rem 0; }
+    .section-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.26em; text-transform: uppercase; color: var(--red); margin-bottom: 1rem; display: block; }
+    h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 600; line-height: 1.2; color: var(--text); }
+    h1 { font-size: clamp(2.6rem, 5.5vw, 4rem); }
+    h2 { font-size: clamp(2rem, 4vw, 2.8rem); }
+    h3 { font-size: 1.35rem; }
+    p { color: var(--text-secondary); line-height: 1.85; }
+    .divider { width: 40px; height: 2px; background: var(--red); margin: 1.5rem 0; }
+    .divider.center { margin: 1.5rem auto; }
+
+    .img-ph {
+      background: repeating-linear-gradient(135deg, #e0ddd5 0, #e0ddd5 4px, #e8e5de 4px, #e8e5de 18px);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 0.5rem;
+      color: #9a9488; font-family: monospace; font-size: 0.7rem; letter-spacing: 0.04em; text-align: center; padding: 1rem;
+    }
+    .img-ph strong { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.3rem; }
+
+    footer { background: var(--navy-deep); color: rgba(255,255,255,0.6); padding: 4.5rem 0 2rem; font-size: 0.85rem; }
+    .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 2rem; }
+    .footer-logo-name { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 600; color: var(--white); margin-bottom: 2px; }
+    .footer-logo-tag { font-size: 0.56rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; display: block; }
+    .footer-desc { color: rgba(255,255,255,0.4); line-height: 1.7; font-size: 0.82rem; }
+    .footer-vet { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-top: 1rem; }
+    .footer-col h5 { font-family: var(--font-sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 1.2rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.65rem; }
+    .footer-col ul li a { color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; font-size: 0.85rem; }
+    .footer-col ul li a:hover { color: var(--white); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.72rem; color: rgba(255,255,255,0.25); }
+
+    @media (max-width: 768px) {
+      .nav-links, .vet-badge { display: none; }
+      .hamburger { display: flex; }
+      section { padding: 4rem 0; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+  <style>
+    /* PAGE HERO */
     .page-hero {
       background: var(--navy);
       padding: 7rem 0 6rem;
-      position: relative;
-      overflow: hidden;
+      position: relative; overflow: hidden;
     }
-
     .page-hero::before {
       content: '';
-      position: absolute;
-      inset: 0;
+      position: absolute; inset: 0;
       background: radial-gradient(ellipse at 80% 40%, rgba(139,30,30,0.08) 0%, transparent 55%);
       pointer-events: none;
     }
-
     .page-hero-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 2rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-      position: relative;
-      z-index: 1;
+      max-width: var(--max); margin: 0 auto; padding: 0 2rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+      position: relative; z-index: 1;
     }
+    .page-hero h1 { color: var(--white); }
+    .page-hero .lead { color: rgba(255,255,255,0.45); font-size: 1.05rem; line-height: 1.85; margin-top: 1.2rem; max-width: 440px; }
+    .page-hero .img-ph { height: 360px; }
+    .page-hero-actions { margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap; }
 
-    .page-hero h1 {
-      color: var(--white);
-    }
-
-    .page-hero .lead {
-      color: rgba(255,255,255,0.45);
-      font-size: 1.05rem;
-      line-height: 1.85;
-      margin-top: 1.2rem;
-      max-width: 480px;
-    }
-
-    .page-hero .img-ph {
-      min-height: 360px;
-    }
-
-    .page-hero-actions {
-      margin-top: 2.5rem;
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .services-intro {
+    /* MEZZO DEEP DIVE */
+    .mezzo-hero {
       background: var(--white);
-    }
-
-    .services-intro-inner {
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 6rem;
-      align-items: center;
-    }
-
-    .services-intro .img-ph {
-      min-height: 520px;
-    }
-
-    .services-intro p {
-      margin-bottom: 1.2rem;
-    }
-
-    .services-grid {
-      background: var(--bg);
-    }
-
-    .services-grid-wrap {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--neutral);
-      margin-top: 3rem;
-    }
-
-    .service-card {
-      background: var(--white);
-      padding: 2.5rem 2rem;
-      border-top: 3px solid var(--neutral);
-      transition: border-color 0.2s ease;
-    }
-
-    .service-card:hover {
-      border-top-color: var(--red);
-    }
-
-    .service-card h3 {
-      margin-bottom: 0.75rem;
-    }
-
-    .service-card p {
-      font-size: 0.9rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .service-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-      margin-bottom: 1.75rem;
-    }
-
-    .service-list li {
-      display: flex;
-      gap: 0.75rem;
-      align-items: flex-start;
-      font-size: 0.84rem;
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    .service-list li::before {
-      content: '';
-      display: block;
-      width: 5px;
-      height: 5px;
-      background: var(--red);
-      border-radius: 50%;
-      flex-shrink: 0;
-      margin-top: 8px;
-    }
-
-    .brand-section {
-      background: var(--navy);
-      padding: 6rem 0;
-    }
-
-    .brand-header {
-      max-width: 620px;
-    }
-
-    .brand-header h2 {
-      color: var(--white);
-    }
-
-    .brand-header .divider {
-      background: var(--gold);
-    }
-
-    .brand-header p {
-      color: rgba(255,255,255,0.45);
-    }
-
-    .brand-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      margin-top: 3rem;
-      background: rgba(255,255,255,0.08);
-    }
-
-    .brand-card {
-      background: var(--navy);
-      padding: 3rem 2.5rem;
-    }
-
-    .brand-card h3 {
-      color: var(--white);
-      font-size: 1.6rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .brand-sub {
-      display: block;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.2rem;
-    }
-
-    .brand-card p {
-      color: rgba(255,255,255,0.5);
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-    }
-
-    .comparison {
-      background: var(--bg);
-    }
-
-    .compare-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 3rem;
-      font-size: 0.88rem;
-    }
-
-    .compare-table th {
-      text-align: left;
-      padding: 1rem 1.5rem;
-      font-family: var(--font-sans);
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      background: var(--navy);
-      color: rgba(255,255,255,0.5);
-    }
-
-    .compare-table th.hl {
-      background: var(--red);
-      color: var(--white);
-    }
-
-    .compare-table td {
-      padding: 1rem 1.5rem;
-      border-bottom: 1px solid var(--neutral);
-      color: var(--text-secondary);
-    }
-
-    .compare-table td:first-child {
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .compare-table td.hl {
-      color: var(--text);
-      font-weight: 600;
-      background: rgba(139,30,30,0.04);
-    }
-
-    .compare-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .yes {
-      color: var(--red);
-      font-weight: 700;
-    }
-
-    .no {
-      color: var(--neutral);
-    }
-
-    .svc-cta {
-      background: var(--navy-deep);
-      text-align: center;
       padding: 7rem 0;
     }
+    .mezzo-hero-inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 6rem; align-items: center; }
+    .mezzo-hero .img-ph { height: 560px; }
+    .mezzo-tag {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); border: 1px solid rgba(184,144,58,0.3); padding: 0.35rem 0.9rem;
+      margin-bottom: 1.2rem;
+    }
+    .mezzo-hero h2 { margin-bottom: 0.5rem; }
+    .mezzo-hero .lead-text { font-size: 1rem; color: var(--text-secondary); line-height: 1.85; margin-bottom: 2rem; margin-top: 0.75rem; }
+    .spec-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem;
+    }
+    .spec-block {
+      background: var(--bg);
+      padding: 1.3rem 1.5rem;
+      border-left: 3px solid var(--red);
+    }
+    .spec-block strong {
+      display: block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text); margin-bottom: 4px;
+    }
+    .spec-block span { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.6; }
+    .mezzo-note {
+      background: var(--navy);
+      color: rgba(255,255,255,0.7);
+      padding: 1.5rem 1.8rem;
+      font-size: 0.88rem;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+    .mezzo-note strong { color: var(--gold); display: block; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.4rem; }
 
-    .svc-cta h2 {
-      color: var(--white);
-      margin-bottom: 1rem;
+    /* SERVICE SECTIONS */
+    .svc { padding: 7rem 0; }
+    .svc:nth-child(even) { background: var(--bg); }
+    .svc-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+    .svc-inner.reverse { direction: rtl; }
+    .svc-inner.reverse > * { direction: ltr; }
+    .svc .img-ph { height: 500px; }
+    .svc-tag {
+      display: inline-block; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--white); background: var(--navy); padding: 0.3rem 0.85rem; margin-bottom: 1.2rem;
+    }
+    .svc h2 { margin-bottom: 0.5rem; }
+    .svc .lead-p { font-size: 1rem; color: var(--text-secondary); line-height: 1.85; margin-bottom: 2rem; margin-top: 0.75rem; }
+    .benefit-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .benefit-item {
+      display: flex; gap: 0.7rem; align-items: flex-start;
+      font-size: 0.85rem; color: var(--text); font-weight: 500;
+    }
+    .benefit-item::before {
+      content: '';
+      display: block; width: 5px; height: 5px;
+      background: var(--red); border-radius: 50%;
+      flex-shrink: 0; margin-top: 7px;
+    }
+    .install-note {
+      background: var(--bg);
+      border-left: 3px solid var(--red);
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 2.5rem;
+      font-size: 0.87rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+    .install-note strong {
+      color: var(--text); display: block; margin-bottom: 0.3rem;
+      font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
     }
 
-    .svc-cta p {
-      color: rgba(255,255,255,0.45);
-      max-width: 540px;
-      margin: 0 auto 2.5rem;
-    }
+    /* BRAND PARTNERS */
+    .partners { background: var(--navy); padding: 6rem 0; }
+    .partners-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px; margin-top: 3.5rem; background: rgba(255,255,255,0.06); }
+    .partner-card { background: var(--navy); padding: 3.5rem 3rem; }
+    .partner-name { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 600; color: var(--white); margin-bottom: 0.5rem; }
+    .partner-sub { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: block; }
+    .partner-card p { color: rgba(255,255,255,0.45); font-size: 0.9rem; line-height: 1.8; margin-bottom: 1rem; }
+    .partner-card p:last-child { margin-bottom: 0; }
 
-    .svc-cta .section-label {
-      color: var(--gold);
+    /* COMPARISON */
+    .comparison { background: var(--bg); }
+    .compare-table { width: 100%; border-collapse: collapse; margin-top: 3rem; font-size: 0.88rem; }
+    .compare-table th {
+      text-align: left; padding: 1rem 1.5rem;
+      font-family: var(--font-sans); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      background: var(--navy); color: rgba(255,255,255,0.5);
     }
+    .compare-table th.hl { background: var(--red); color: var(--white); }
+    .compare-table td { padding: 1rem 1.5rem; border-bottom: 1px solid var(--neutral); color: var(--text-secondary); }
+    .compare-table td:first-child { font-weight: 600; color: var(--text); }
+    .compare-table td.hl { color: var(--text); font-weight: 600; background: rgba(139,30,30,0.04); }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .yes { color: var(--red); font-weight: 700; }
+    .no { color: var(--neutral); }
 
-    .cta-actions {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
+    /* FINAL CTA */
+    .svc-cta { background: var(--navy-deep); text-align: center; padding: 7rem 0; }
+    .svc-cta h2 { color: var(--white); margin-bottom: 1rem; }
+    .svc-cta p { color: rgba(255,255,255,0.45); max-width: 520px; margin: 0 auto 2.5rem; }
+    .svc-cta .section-label { color: var(--gold); }
+    .cta-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 
     @media (max-width: 900px) {
-      .page-hero-inner,
-      .services-intro-inner {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-
-      .page-hero .img-ph,
-      .services-intro .img-ph {
-        min-height: 280px;
-      }
-
-      .services-grid-wrap,
-      .brand-grid {
-        grid-template-columns: 1fr;
-      }
+      .page-hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .page-hero .img-ph { height: 260px; }
+      .mezzo-hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .mezzo-hero .img-ph { height: 300px; }
+      .spec-grid { grid-template-columns: 1fr; }
+      .svc-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .svc-inner.reverse { direction: ltr; }
+      .svc .img-ph { height: 300px; }
+      .benefit-grid { grid-template-columns: 1fr; }
+      .partners-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <div class="nav-inner">
-      <a href="index.html" class="logo">
-        <span class="logo-name">Radiant Premier</span>
-        <span class="logo-tag">Windows &amp; Doors</span>
-      </a>
-
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="story.html">Our Story</a></li>
-        <li><a href="services.html" class="active">Services</a></li>
-        <li><a href="contact.html" class="nav-cta">Get Free Estimate</a></li>
-      </ul>
-
-      <div class="vet-badge">
-        Veteran &amp; Minority Owned
-      </div>
-
-      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-name">Radiant Premier</span>
+      <span class="logo-tag">Windows &amp; Doors</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="story.html">Our Story</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Get Free Estimate</a></li>
+    </ul>
+    <div class="vet-badge">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="#B8903A"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+      Veteran &amp; Minority Owned
     </div>
-  </nav>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="story.html">Our Story</a>
+  <a href="services.html">Services</a>
+  <a href="index.html#contact">Get Free Estimate</a>
+</div>
 
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">Home</a>
-    <a href="story.html">Our Story</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html">Get Free Estimate</a>
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <span class="section-label" style="color:rgba(184,144,58,0.8);">Our Services</span>
+      <h1>Premium Products.<br/>Precision Installed.</h1>
+      <p class="lead">We carry two brands — Alside and ProVia — and we know them inside out. Not a catalog of options chosen to hit every price point. Two partners we trust completely, for the homes that deserve the best.</p>
+      <div class="page-hero-actions">
+        <a href="index.html#contact" class="btn">Get My Free Estimate</a>
+        <a href="tel:4438757617" class="btn btn-outline">(443) 875-7617</a>
+      </div>
+    </div>
+    <div class="img-ph" style="height:360px;">
+      <strong>Services Hero</strong>
+      Elegant home with large<br/>picture windows — bright,<br/>airy, flawlessly installed
+    </div>
+  </div>
+</section>
+
+<!-- MEZZO PRODUCT EXPLORER -->
+<section style="background:var(--white); padding:7rem 0;" id="windows">
+<div class="container">
+
+  <!-- Header -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-bottom:5rem;">
+    <div>
+      <div class="mezzo-tag" style="margin-bottom:1.2rem;">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+        Our Signature Window
+      </div>
+      <h2 style="margin-bottom:.75rem;">Alside Mezzo®</h2>
+      <p style="font-size:1rem;line-height:1.85;margin-bottom:2rem;">A thermally optimized narrowline frame, advanced composite reinforcements, and the industry's best glass package as standard. The Mezzo isn't one of many products we offer — it's the window we've built our entire service around.</p>
+      <div style="display:flex;gap:2rem;padding:1.5rem 0;border-top:1px solid var(--neutral);border-bottom:1px solid var(--neutral);margin-bottom:2rem;">
+        <div><div style="font-family:var(--font-serif);font-size:1.5rem;font-weight:700;color:var(--navy);">0.19</div><div style="font-size:0.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary);">U-Factor</div></div>
+        <div><div style="font-family:var(--font-serif);font-size:1.5rem;font-weight:700;color:var(--navy);">0.21</div><div style="font-size:0.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary);">SHGC</div></div>
+        <div><div style="font-family:var(--font-serif);font-size:1.5rem;font-weight:700;color:var(--gold);">★ ES</div><div style="font-size:0.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary);">Most Efficient</div></div>
+        <div><div style="font-family:var(--font-serif);font-size:1.5rem;font-weight:700;color:var(--red);">30%</div><div style="font-size:0.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary);">Tax Credit Eligible</div></div>
+      </div>
+      <a href="index.html#contact" class="btn">Get My Window Estimate</a>
+    </div>
+    <div class="img-ph" style="height:460px;">
+      <strong>Mezzo Hero</strong>
+      Alside Mezzo double-hung in<br/>a bright DFW living room —<br/>narrowline frame, clean sightlines
+    </div>
   </div>
 
-  <section class="page-hero">
-    <div class="page-hero-inner">
+  <!-- Technology Features -->
+  <div style="margin-bottom:5rem;">
+    <span class="section-label">Built-In Technology</span>
+    <h3 style="font-size:1.6rem;margin-bottom:2rem;">Every Mezzo is Engineered, Not Just Assembled</h3>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--neutral);">
+      <div style="background:var(--bg);padding:2rem 1.8rem;">
+        <div style="font-size:0.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;">EdgeForce™ Frame</div>
+        <p style="font-size:.85rem;line-height:1.7;">Low-profile narrowline frame expands the glass area while internal chambers increase structural integrity, rigidity, and energy efficiency.</p>
+      </div>
+      <div style="background:var(--bg);padding:2rem 1.8rem;">
+        <div style="font-size:0.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;">CoreFX™ Composite Reinforcement</div>
+        <p style="font-size:.85rem;line-height:1.7;">Reduces energy transfer through the frame while strengthening meeting rails and allowing secure mounting of hardware.</p>
+      </div>
+      <div style="background:var(--bg);padding:2rem 1.8rem;">
+        <div style="font-size:0.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;">Cavity Foam Insulation</div>
+        <p style="font-size:.85rem;line-height:1.7;">Silver-gray graphite EPS foam lines select frame chambers, reflecting radiant heat and lowering thermal conductivity beyond standard vinyl.</p>
+      </div>
+      <div style="background:var(--bg);padding:2rem 1.8rem;">
+        <div style="font-size:0.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;">Gatekeeper™ Sill Interlock</div>
+        <p style="font-size:.85rem;line-height:1.7;">Interlocking sash-to-sill technology creates a unified wall of strength, helping prevent bowing in high-wind conditions.</p>
+      </div>
+      <div style="background:var(--bg);padding:2rem 1.8rem;">
+        <div style="font-size:0.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;">Defense-Tek™ Locking</div>
+        <p style="font-size:.85rem;line-height:1.7;">End-of-throw cam shift locking action delivers increased security and protection — engineered for both performance and peace of mind.</p>
+      </div>
+      <div style="background:var(--bg);padding:2rem 1.8rem;">
+        <div style="font-size:0.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;">HP3™ Sill Dam System</div>
+        <p style="font-size:.85rem;line-height:1.7;">Telescoping sill dam delivers protection from air and water infiltration, increases structural stability, and maintains a clean exterior appearance.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Glass Package Step-Up -->
+  <div style="margin-bottom:5rem;">
+    <span class="section-label">Glass Package Options</span>
+    <h3 style="font-size:1.6rem;margin-bottom:.5rem;">We Install ClimaTech PriME as Standard</h3>
+    <p style="max-width:600px;margin-bottom:2rem;">Alside offers four insulated glass tiers. Most installers offer the base package by default and charge more for better options. We start every Mezzo install with PriME — the top tier — because it's what Texas homes deserve.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--neutral);" id="glassPackages">
+
+      <div class="glass-pkg" data-pkg="0" style="background:var(--bg);padding:2rem 1.5rem;cursor:pointer;border-top:3px solid var(--neutral);transition:all .2s;">
+        <div style="font-size:0.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:.75rem;">Tier 1 — Base</div>
+        <div style="font-family:var(--font-serif);font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:1rem;">ClimaTech</div>
+        <p style="font-size:.82rem;line-height:1.7;color:var(--text-secondary);">Low-E glass, argon gas, and Intercept Warm-Edge Spacer. ENERGY STAR certified.</p>
+        <div style="margin-top:1rem;font-size:0.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--neutral);">Typical installer default</div>
+      </div>
+
+      <div class="glass-pkg" data-pkg="1" style="background:var(--bg);padding:2rem 1.5rem;cursor:pointer;border-top:3px solid var(--neutral);transition:all .2s;">
+        <div style="font-size:0.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:.75rem;">Tier 2</div>
+        <div style="font-family:var(--font-serif);font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:1rem;">ClimaTech Elite</div>
+        <p style="font-size:.82rem;line-height:1.7;color:var(--text-secondary);">Adds vacuum-depositioned metallic layers that repel UV rays and reduce solar heat gain.</p>
+        <div style="margin-top:1rem;font-size:0.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--neutral);">Common upsell</div>
+      </div>
+
+      <div class="glass-pkg" data-pkg="2" style="background:var(--bg);padding:2rem 1.5rem;cursor:pointer;border-top:3px solid var(--neutral);transition:all .2s;">
+        <div style="font-size:0.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:.75rem;">Tier 3</div>
+        <div style="font-family:var(--font-serif);font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:1rem;">ClimaTech Plus</div>
+        <p style="font-size:.82rem;line-height:1.7;color:var(--text-secondary);">Super Spacer® foam system with UV-filtering Low-E glass and argon for improved edge performance.</p>
+        <div style="margin-top:1rem;font-size:0.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--neutral);">Premium upsell</div>
+      </div>
+
+      <div class="glass-pkg active-pkg" data-pkg="3" style="background:var(--navy);padding:2rem 1.5rem;cursor:pointer;border-top:3px solid var(--gold);transition:all .2s;">
+        <div style="font-size:0.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;">Tier 4 — Top</div>
+        <div style="font-family:var(--font-serif);font-size:1.1rem;font-weight:600;color:var(--white);margin-bottom:1rem;">ClimaTech PriME</div>
+        <p style="font-size:.82rem;line-height:1.7;color:rgba(255,255,255,.55);">3 panes · 3×Low-E · dual argon spaces · two warm-edge spacers. ENERGY STAR Most Efficient in all climate zones. Tax credit eligible.</p>
+        <div style="margin-top:1rem;font-size:0.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);">Our standard — included</div>
+      </div>
+
+    </div>
+    <!-- Detail Panel -->
+    <div id="pkgDetail" style="background:var(--bg);border-left:3px solid var(--red);padding:1.5rem 2rem;margin-top:1px;font-size:.88rem;color:var(--text-secondary);line-height:1.75;display:none;"></div>
+  </div>
+
+  <!-- Window Styles Browser -->
+  <div>
+    <span class="section-label">Available Window Styles</span>
+    <h3 style="font-size:1.6rem;margin-bottom:.5rem;">Every Opening in Your Home, Covered</h3>
+    <p style="max-width:580px;margin-bottom:2rem;">All Mezzo styles are available with ClimaTech PriME glass as standard, custom-sized to your openings, and installed to manufacturer specification.</p>
+
+    <!-- Style Tabs -->
+    <div style="display:flex;gap:0;border-bottom:1px solid var(--neutral);margin-bottom:0;" id="styleTabs">
+      <button class="style-tab active-tab" data-style="0" style="font-family:var(--font-sans);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.4rem;background:none;border:none;border-bottom:2px solid var(--red);color:var(--text);cursor:pointer;white-space:nowrap;">Double Hung</button>
+      <button class="style-tab" data-style="1" style="font-family:var(--font-sans);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.4rem;background:none;border:none;border-bottom:2px solid transparent;color:var(--text-secondary);cursor:pointer;white-space:nowrap;">Sliding</button>
+      <button class="style-tab" data-style="2" style="font-family:var(--font-sans);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.4rem;background:none;border:none;border-bottom:2px solid transparent;color:var(--text-secondary);cursor:pointer;white-space:nowrap;">Casement</button>
+      <button class="style-tab" data-style="3" style="font-family:var(--font-sans);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.4rem;background:none;border:none;border-bottom:2px solid transparent;color:var(--text-secondary);cursor:pointer;white-space:nowrap;">Awning</button>
+      <button class="style-tab" data-style="4" style="font-family:var(--font-sans);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.4rem;background:none;border:none;border-bottom:2px solid transparent;color:var(--text-secondary);cursor:pointer;white-space:nowrap;">Picture &amp; Shapes</button>
+    </div>
+
+    <div id="stylePanel" style="background:var(--white);border:1px solid var(--neutral);border-top:none;padding:3rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;"></div>
+  </div>
+
+</div>
+</section>
+
+<style>
+.glass-pkg:hover { opacity:.9; }
+.active-pkg { background:var(--navy) !important; border-top-color:var(--gold) !important; }
+.style-tab:hover { color:var(--text) !important; }
+.active-tab { border-bottom-color:var(--red) !important; color:var(--text) !important; }
+@media(max-width:900px){
+  #glassPackages { grid-template-columns:1fr 1fr !important; }
+  #styleTabs { overflow-x:auto; }
+  #stylePanel { grid-template-columns:1fr !important; }
+}
+</style>
+
+<script>
+const styleData = [
+  {
+    name: "Double Hung",
+    tagline: "Forever in Style",
+    desc: "Both sashes tilt in for easy cleaning from inside your home — no ladders needed. Refined design with clean lines and crisp corners, elevated by the Mezzo's narrowline frame for maximum glass area.",
+    features: [
+      "Both sashes tilt in for easy interior cleaning",
+      "Constant force balance system for smooth raising and lowering",
+      "Narrowline frame with fusion-welded corners",
+      "Integrated sash-to-sill interlock against wind bowing",
+      "CoreFX composite reinforcement in meeting rails",
+      "True sloped sill for efficient drainage",
+      "Hidden screen track for clean appearance"
+    ],
+    img: "Mezzo Double Hung window —\nclassic proportions, tilted sash\nshowing easy-clean position"
+  },
+  {
+    name: "Sliding",
+    tagline: "Simplicity and Ease",
+    desc: "Sashes slide horizontally and lift out for convenient cleaning. Visually sleek with a slim silhouette and smooth gliding action — ideal for wide openings where vertical operation isn't practical.",
+    features: [
+      "Sashes lift out for convenient cleaning",
+      "Nylon-encased dual brass roller system for easy-glide performance",
+      "Narrowline frame with fusion-welded corners",
+      "Embedded multi-chambered construction for thermal performance",
+      "CoreFX composite reinforcement in meeting rails",
+      "Heavy-duty construction with weathertight fit",
+      "Hidden screen track"
+    ],
+    img: "Mezzo Sliding window —\nwide horizontal opening,\nclean contemporary frame"
+  },
+  {
+    name: "Casement",
+    tagline: "The Pinnacle of Utility and Design",
+    desc: "The sash opens outward with a gentle crank handle, providing maximum ventilation and unobstructed views. State-of-the-art hinge allows sash cleaning from inside the home.",
+    features: [
+      "Positive crank mechanism for easy one-handed operation",
+      "Multi-point locking system ensures tight seal",
+      "Beveled exterior sash for larger visual glass area",
+      "State-of-the-art hinge — sash cleans from inside",
+      "Step-down frame with compression inner bulb seal",
+      "Multiple lite configurations in single mainframe",
+      "Available in multiple grid patterns"
+    ],
+    img: "Mezzo Casement window —\ncrank-open sash, slim frame,\nbright interior natural light"
+  },
+  {
+    name: "Awning",
+    tagline: "Fresh Air on Your Terms",
+    desc: "Opens up and outward, allowing ventilation even in light rain while keeping weather out. Often combined with fixed lites for expanded window designs that maximize both airflow and daylight.",
+    features: [
+      "Opens up and out for ventilation in light rain",
+      "Heavy-duty hinge system for easy operation",
+      "Dual locking system on each side for tight seal",
+      "Beveled exterior sash gives appearance of larger glass area",
+      "Multiple lite configurations in single mainframe",
+      "Combine with fixed lites for expanded design",
+      "Ideal for basement and high-wall applications"
+    ],
+    img: "Mezzo Awning window —\nopen position showing ventilation,\nrain-compatible design"
+  },
+  {
+    name: "Picture & Special Shapes",
+    tagline: "Sometimes Bold, Always Beautiful",
+    desc: "Fixed picture windows offer the widest possible glass area and unobstructed views. Combined with Mezzo's special shape options — arches, circles, octagons, and more — they create statement moments in any home.",
+    features: [
+      "Maximum unobstructed glass exposure",
+      "Narrowline frame with fusion-welded corners",
+      "Architectural shapes: Circle Top, Quarter Arch, Eyebrow, Half Eyebrow, Ellipse, Full Circle",
+      "Geometric shapes: Hexagon, Octagon, Pentagon, Triangle",
+      "High-performance insulated glass unit standard",
+      "Embedded multi-chambered construction",
+      "Custom sizes for any opening"
+    ],
+    img: "Mezzo Picture window —\nlarge fixed glass, no frame obstruction,\nluxury home exterior view"
+  }
+];
+
+const pkgDetails = [
+  "<strong>ClimaTech (Base):</strong> Combines insulating Low-E glass, argon gas, and the Intercept Warm-Edge Spacer System. ENERGY STAR certified — a solid performer, but not where we start. This is what most installers offer by default.",
+  "<strong>ClimaTech Elite:</strong> Adds vacuum-depositioned metallic layers that repel the sun's UV rays and reduce solar heat gain — a meaningful upgrade for south- and west-facing exposures in Texas.",
+  "<strong>ClimaTech Plus:</strong> Combines the Super Spacer® structural foam system with UV-filtering Low-E glass and argon gas. The foam spacer creates a 'warm edge' with no metal-to-glass contact for improved edge efficiency.",
+  "<strong>ClimaTech PriME — What We Install:</strong> Three panes of glass, three surfaces of Low-E technology, two spaces of argon gas fill, two warm-edge spacer systems. U-Factor 0.19 · SHGC 0.21. ENERGY STAR® Most Efficient in all climate zones. May qualify for federal tax credits. This is not an upgrade — it's our standard."
+];
+
+function renderStyle(idx) {
+  const d = styleData[idx];
+  document.getElementById('stylePanel').innerHTML = `
+    <div>
+      <div style="font-family:var(--font-sans);font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;">${d.tagline}</div>
+      <h3 style="font-size:1.35rem;margin-bottom:1rem;">${d.name} Windows</h3>
+      <p style="font-size:.9rem;line-height:1.85;color:var(--text-secondary);margin-bottom:1.5rem;">${d.desc}</p>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.65rem;">
+        ${d.features.map(f => `<li style="display:flex;gap:.75rem;align-items:flex-start;font-size:.84rem;color:var(--text);font-weight:500;"><span style="display:block;width:5px;height:5px;background:var(--red);border-radius:50%;flex-shrink:0;margin-top:8px;"></span>${f}</li>`).join('')}
+      </ul>
+      <a href="index.html#contact" class="btn" style="margin-top:2rem;display:inline-block;">Get a ${d.name} Estimate</a>
+    </div>
+    <div class="img-ph" style="height:420px;"><strong>${d.name} Window</strong><br/>${d.img}</div>
+  `;
+}
+
+function renderPkg(idx) {
+  const detail = document.getElementById('pkgDetail');
+  detail.innerHTML = pkgDetails[idx];
+  detail.style.display = 'block';
+  detail.style.borderLeftColor = idx === 3 ? 'var(--gold)' : 'var(--neutral)';
+}
+
+// Glass package click
+document.querySelectorAll('.glass-pkg').forEach(el => {
+  el.addEventListener('click', function() {
+    const idx = +this.dataset.pkg;
+    document.querySelectorAll('.glass-pkg').forEach((p, i) => {
+      if (i === 3) {
+        p.style.background = i === idx ? 'var(--navy)' : 'var(--navy)';
+        p.style.borderTopColor = i === idx ? 'var(--gold)' : 'var(--gold)';
+      } else {
+        p.style.background = i === idx ? 'var(--white)' : 'var(--bg)';
+        p.style.borderTopColor = i === idx ? 'var(--red)' : 'var(--neutral)';
+      }
+    });
+    renderPkg(idx);
+  });
+});
+
+// Style tabs
+document.querySelectorAll('.style-tab').forEach(tab => {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.style-tab').forEach(t => {
+      t.style.borderBottomColor = 'transparent';
+      t.style.color = 'var(--text-secondary)';
+    });
+    this.style.borderBottomColor = 'var(--red)';
+    this.style.color = 'var(--text)';
+    renderStyle(+this.dataset.style);
+  });
+});
+
+// Init
+renderStyle(0);
+renderPkg(3);
+document.getElementById('pkgDetail').style.display = 'block';
+</script>
+
+<!-- FRAMEWORKS COLOR SECTION -->
+<section style="background:var(--bg);padding:6rem 0;border-top:1px solid var(--neutral);">
+<div class="container">
+  <span class="section-label">FrameWorks® Color Collection</span>
+  <h3 style="font-size:1.6rem;margin-bottom:.5rem;">Exterior & Interior Finish Options</h3>
+  <p style="max-width:620px;margin-bottom:2.5rem;">Mezzo's FrameWorks® exterior finishes use a polyurethane coating with heat-reflective pigments for a strong, fade-resistant finish. Interior woodgrain laminates are performance-engineered for lasting beauty. A 10-year fade-resistance warranty is included on all FrameWorks colors.</p>
+
+  <div style="margin-bottom:3rem;">
+    <div style="font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:1.2rem;">Exterior Frame Colors</div>
+    <div style="display:flex;flex-wrap:wrap;gap:.75rem;" id="extColors">
+      <!-- rendered by JS -->
+    </div>
+    <div id="extColorLabel" style="margin-top:1rem;font-size:.8rem;font-weight:600;color:var(--text);min-height:1.2rem;"></div>
+  </div>
+
+  <div>
+    <div style="font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:1.2rem;">Interior Woodgrain &amp; Solid Colors</div>
+    <div style="display:flex;flex-wrap:wrap;gap:.75rem;" id="intColors"></div>
+    <div id="intColorLabel" style="margin-top:1rem;font-size:.8rem;font-weight:600;color:var(--text);min-height:1.2rem;"></div>
+  </div>
+</div>
+</section>
+
+<script>
+const extColorData = [
+  { name: 'White', hex: '#F2F0EC', light: true },
+  { name: 'Beige', hex: '#D4C9A8', light: true },
+  { name: 'Classic Clay', hex: '#B8A882', light: true },
+  { name: 'Sand Dune', hex: '#C9A86C', light: true },
+  { name: 'Desert Clay', hex: '#B8845A' },
+  { name: 'Hudson Khaki', hex: '#8C7B5A' },
+  { name: 'American Terra', hex: '#7A4E30' },
+  { name: 'English Red', hex: '#7A1E1E' },
+  { name: 'Forest Green', hex: '#2A5035' },
+  { name: 'Architectural Bronze', hex: '#4A3820' },
+  { name: 'Castle Gray', hex: '#5A5A5A' },
+  { name: 'Silver', hex: '#909090' },
+  { name: 'Black Laminate', hex: '#1A1A1A' }
+];
+
+const intColorData = [
+  { name: 'White Woodgrain', hex: '#F0EDE6', light: true },
+  { name: 'White Solid', hex: '#F5F3EF', light: true },
+  { name: 'Beige Solid', hex: '#D9CEB0', light: true },
+  { name: 'Classic Clay Solid', hex: '#C0AD8A', light: true },
+  { name: 'Light Oak', hex: '#C8A055' },
+  { name: 'Foxwood', hex: '#9A6845' },
+  { name: 'Rich Maple', hex: '#B06030' },
+  { name: 'Cherry', hex: '#802828' },
+  { name: 'Dark Oak', hex: '#5A3820' }
+];
+
+function buildSwatches(data, containerId, labelId) {
+  const container = document.getElementById(containerId);
+  const label = document.getElementById(labelId);
+  data.forEach((c, i) => {
+    const s = document.createElement('div');
+    s.title = c.name;
+    s.style.cssText = `width:44px;height:44px;background:${c.hex};border-radius:2px;cursor:pointer;border:2px solid transparent;transition:all .15s;flex-shrink:0;`;
+    s.addEventListener('mouseenter', () => { label.textContent = c.name; });
+    s.addEventListener('mouseleave', () => {
+      const active = container.querySelector('[data-active]');
+      label.textContent = active ? active.title : '';
+    });
+    s.addEventListener('click', () => {
+      container.querySelectorAll('[data-active]').forEach(el => { el.removeAttribute('data-active'); el.style.borderColor = 'transparent'; el.style.outline = 'none'; });
+      s.setAttribute('data-active', '1');
+      s.style.borderColor = c.light ? '#999' : '#fff';
+      s.style.outline = `3px solid var(--red)`;
+      s.style.outlineOffset = '2px';
+      label.textContent = c.name;
+    });
+    container.appendChild(s);
+  });
+}
+
+buildSwatches(extColorData, 'extColors', 'extColorLabel');
+buildSwatches(intColorData, 'intColors', 'intColorLabel');
+</script>
+
+<!-- PROVIA DOOR EXPLORER -->
+<section style="background:var(--bg);padding:7rem 0;" id="entry-doors">
+<div class="container">
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-bottom:4rem;">
+    <div>
+      <div class="mezzo-tag" style="margin-bottom:1.2rem;">ProVia — Our Door Partner</div>
+      <h2 style="margin-bottom:.75rem;">Entry &amp; Patio Doors</h2>
+      <p style="font-size:1rem;line-height:1.85;margin-bottom:1.5rem;">ProVia custom-crafts every door to your home's exact measurements — no stock sizes, no compromises. As an ENERGY STAR® partner, their doors meet strict energy-efficiency standards while delivering the curb appeal and security that DFW homes demand.</p>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap;padding:1.5rem 0;border-top:1px solid var(--neutral);">
+        <div style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary);background:var(--white);padding:.5rem 1rem;border:1px solid var(--neutral);">Transferable Lifetime Warranty</div>
+        <div style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary);background:var(--white);padding:.5rem 1rem;border:1px solid var(--neutral);">ENERGY STAR® Certified</div>
+        <div style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary);background:var(--white);padding:.5rem 1rem;border:1px solid var(--neutral);">Custom Crafted to Exact Fit</div>
+        <div style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary);background:var(--white);padding:.5rem 1rem;border:1px solid var(--neutral);">Factory-Applied Finishes</div>
+      </div>
+    </div>
+    <div class="img-ph" style="height:400px;">
+      <strong>ProVia Door Hero</strong>
+      ProVia entry door — dark finish,<br/>sidelights, brick exterior,<br/>golden hour DFW light
+    </div>
+  </div>
+
+  <!-- Door Category Tabs -->
+  <div style="display:flex;gap:0;border-bottom:2px solid var(--neutral);margin-bottom:0;" id="doorTabs">
+    <button class="door-tab active-door-tab" data-door="0" style="font-family:var(--font-sans);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1rem 2rem;background:none;border:none;border-bottom:3px solid var(--red);color:var(--text);cursor:pointer;margin-bottom:-2px;">Entry Doors</button>
+    <button class="door-tab" data-door="1" style="font-family:var(--font-sans);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1rem 2rem;background:none;border:none;border-bottom:3px solid transparent;color:var(--text-secondary);cursor:pointer;margin-bottom:-2px;">Patio &amp; Sliding Doors</button>
+  </div>
+  <div id="doorPanel" style="background:var(--white);border:1px solid var(--neutral);border-top:none;padding:3rem;"></div>
+
+</div>
+</section>
+
+<style>
+.door-tab:hover { color:var(--text) !important; }
+.active-door-tab { border-bottom-color:var(--red) !important; color:var(--text) !important; }
+.door-line-card { background:var(--bg); padding:1.8rem; border-top:3px solid var(--neutral); cursor:pointer; transition:all .2s; }
+.door-line-card:hover { border-top-color:var(--navy); }
+.door-line-card.active-line { border-top-color:var(--red); background:var(--white); }
+</style>
+
+<script>
+const doorData = [
+  {
+    label: "Entry Doors",
+    intro: "ProVia entry doors are custom-crafted to your home's exact measurements and ordered in your preferred color — something most manufacturers don't offer. Every finish is factory-applied by skilled craftsmen, warranted against flaking, peeling, or blistering.",
+    lines: [
+      {
+        name: "Legacy™",
+        sub: "Steel Entry Doors",
+        desc: "Built with 20-gauge galvannealed steel — 49% stronger than standard 24-gauge doors. Computer-driven foam fill ensures optimal insulation for every slab. Available in smooth or woodgrain textures in multiple stain and paint finishes.",
+        features: [
+          "20-gauge steel — 49% more than industry standard 24-gauge",
+          "Computer-driven foam fill for consistent insulation",
+          "Rigid composite lock block reinforces deadbolt area",
+          "Special thermal barrier adhesives reduce heat transfer",
+          "Tab and slot mechanical interlocks for structural strength",
+          "Composite bottom endcaps increase rigidity",
+          "ENERGY STAR® certified on most styles",
+          "Available with sidelites and transoms"
+        ],
+        img: "ProVia Legacy steel entry door —\ndark woodgrain finish, sidelights,\nbrick DFW home exterior"
+      },
+      {
+        name: "Signet® / Ascent™",
+        sub: "Fiberglass Entry Doors",
+        desc: "Fiberglass construction that authentically replicates wood grain without the maintenance. Hand-applied stains and glazes by skilled craftsmen deliver a luxurious appearance that lasts. Ideal for homes seeking warmth and character at the entry.",
+        features: [
+          "Fiberglass construction — won't warp, rot, or corrode",
+          "Authentic woodgrain texture replicates real wood",
+          "Hand-applied stain and glaze finishes by craftsmen",
+          "Automated painting line for smooth, consistent painted finishes",
+          "Multi-point locking systems",
+          "Custom to your exact opening dimensions",
+          "Available in double-door, sidelite, and transom configurations",
+          "Transferable Lifetime Limited Warranty"
+        ],
+        img: "ProVia Signet fiberglass door —\nrich woodgrain stain finish,\nelegant front entry, stone surround"
+      }
+    ]
+  },
+  {
+    label: "Patio & Sliding Doors",
+    intro: "ProVia's patio door lineup is built to the same exacting standards as their entry doors — custom-crafted, ENERGY STAR® certified, and engineered to operate smoothly for decades. Available as 2-, 3-, or 4-panel configurations with a full range of hardware and glass options.",
+    lines: [
+      {
+        name: "Endure™",
+        sub: "Premium Vinyl Patio Doors",
+        desc: "The top-of-line ProVia patio door. FineLine Technology delivers cleaner welded corners. Neopor® foam-insulated frames, multi-point mortise lock hardware, and available in an all-black matte coal finish for bold architectural impact.",
+        features: [
+          "FineLine Technology™ — cleaner, more aesthetic welded corners",
+          "Neopor® insulation in frame for superior thermal performance",
+          "Four-point locking: two center pins + top and bottom",
+          "Patented 4-wheel sliding system for effortless operation",
+          "Galvanized steel-reinforced sill with patented water drain",
+          "Available in All-Black Matte Coal finish",
+          "AccuVent™ ergonomic lever with ratchet/lock system",
+          "BetterVue® fiberglass mesh screen included"
+        ],
+        img: "ProVia Endure patio door —\nwide 3-panel sliding configuration,\nDFW pool deck, golden hour"
+      },
+      {
+        name: "Aspect™",
+        sub: "Vinyl Patio Doors",
+        desc: "Tested to the most stringent industry standards for air and water infiltration, wind load, and forced entry. Multi-chamber profiles, Schlage® C Keyway hardware, and top-hung ball-bearing screen frame for effortless operation.",
+        features: [
+          "Strong multi-chamber profiles for thermal efficiency",
+          "Tested to stringent standards: air, water, wind, forced entry",
+          "Schlage® C Keyway — single key entry for entire home",
+          "Top-hung ball-bearing aluminum screen frame",
+          "AccuVent™ lever with multiple venting positions",
+          "Foot lock option for ventilation with security",
+          "Available as 2-, 3-, or 4-panel configurations",
+          "Internal blinds available — protected, always clean"
+        ],
+        img: "ProVia Aspect patio door —\n2-panel sliding, white frame,\nopen to outdoor living space"
+      }
+    ]
+  }
+];
+
+let activeDoor = 0;
+let activeLine = 0;
+
+function renderDoorPanel() {
+  const cat = doorData[activeDoor];
+  document.getElementById('doorPanel').innerHTML = `
+    <p style="font-size:.9rem;color:var(--text-secondary);line-height:1.85;margin-bottom:2rem;max-width:680px;">${cat.intro}</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem;" id="doorLineCards">
+      ${cat.lines.map((l, i) => `
+        <div class="door-line-card ${i === activeLine ? 'active-line' : ''}" data-line="${i}">
+          <div style="font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:.3rem;">${l.sub}</div>
+          <div style="font-family:var(--font-serif);font-size:1.15rem;font-weight:600;color:var(--text);margin-bottom:.5rem;">${l.name}</div>
+          <p style="font-size:.82rem;color:var(--text-secondary);line-height:1.6;">${l.desc}</p>
+        </div>
+      `).join('')}
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;" id="doorDetail"></div>
+  `;
+  document.querySelectorAll('.door-line-card').forEach(card => {
+    card.addEventListener('click', function() {
+      activeLine = +this.dataset.line;
+      document.querySelectorAll('.door-line-card').forEach(c => c.classList.remove('active-line'));
+      this.classList.add('active-line');
+      renderDoorDetail();
+    });
+  });
+  renderDoorDetail();
+}
+
+function renderDoorDetail() {
+  const l = doorData[activeDoor].lines[activeLine];
+  document.getElementById('doorDetail').innerHTML = `
+    <div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.65rem;margin-bottom:2rem;">
+        ${l.features.map(f => `<li style="display:flex;gap:.75rem;align-items:flex-start;font-size:.84rem;color:var(--text);font-weight:500;"><span style="display:block;width:5px;height:5px;background:var(--red);border-radius:50%;flex-shrink:0;margin-top:8px;"></span>${f}</li>`).join('')}
+      </ul>
+      <div style="background:var(--bg);border-left:3px solid var(--gold);padding:1.2rem 1.5rem;margin-bottom:2rem;font-size:.87rem;color:var(--text-secondary);line-height:1.75;">
+        <strong style="display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text);margin-bottom:.3rem;">Our Installation Standard</strong>
+        We replace the entire frame system when needed — not just the slab. Every door is shimmed, leveled, and adjusted to ProVia specification before we leave. We don't consider the job done until it swings, seals, and locks perfectly.
+      </div>
+      <a href="index.html#contact" class="btn">Get a ${l.name} Estimate</a>
+    </div>
+    <div class="img-ph" style="height:400px;"><strong>${l.name}</strong><br/>${l.img}</div>
+  `;
+}
+
+document.querySelectorAll('.door-tab').forEach(tab => {
+  tab.addEventListener('click', function() {
+    activeDoor = +this.dataset.door;
+    activeLine = 0;
+    document.querySelectorAll('.door-tab').forEach(t => {
+      t.style.borderBottomColor = 'transparent';
+      t.style.color = 'var(--text-secondary)';
+    });
+    this.style.borderBottomColor = 'var(--red)';
+    this.style.color = 'var(--text)';
+    renderDoorPanel();
+  });
+});
+
+renderDoorPanel();
+</script>
+
+<!-- BRAND PARTNERS -->
+<section class="partners">
+  <div class="container">
+    <div style="max-width:600px;">
+      <span class="section-label" style="color:rgba(184,144,58,0.8);">Our Manufacturing Partners</span>
+      <h2 style="color:var(--white);">Two Brands. Both Chosen on Merit.</h2>
+      <div class="divider" style="background:var(--gold);"></div>
+      <p style="color:rgba(255,255,255,0.45); margin-bottom:0;">We don't carry every brand to satisfy every price point. We carry two — chosen because we've vetted them, we know them, and we're confident recommending them to the homeowners we serve.</p>
+    </div>
+    <div class="partners-grid">
+      <div class="partner-card">
+        <div class="partner-name">Alside (AMI)</div>
+        <span class="partner-sub">Windows — Our Flagship Partner</span>
+        <p>One of America's largest and most established window manufacturers. Alside brings the engineering depth, quality control infrastructure, and warranty integrity that national-scale manufacturing makes possible. Their Mezzo platform is what we've built our window offering around — triple-pane, argon-filled, and Climate Attack Elite as standard.</p>
+        <p>When you buy an Alside window from us, you get the backing of a major manufacturer plus the accountability of a local team that's certified to install it correctly.</p>
+      </div>
+      <div class="partner-card">
+        <div class="partner-name">ProVia</div>
+        <span class="partner-sub">Windows &amp; Doors — Premium Construction</span>
+        <p>ProVia has earned a reputation for building some of the most thoughtfully constructed windows and doors in the industry — with an attention to detail in fabrication that you can feel the moment you operate the product. Their entry and patio door systems are engineered to perform in demanding climates for decades.</p>
+        <p>We chose ProVia for our door program because they align with our own standard: nothing shipped that we wouldn't be proud to put our name on.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="comparison">
+  <div class="container">
+    <span class="section-label">How We Compare</span>
+    <h2>Not All Installers Are Equal</h2>
+    <div class="divider"></div>
+    <p>Here's the honest difference between a Radiant Premier installation and what you'll typically encounter from larger window companies in the DFW market.</p>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>What You Should Expect</th>
+          <th>Typical DFW Contractor</th>
+          <th class="hl">Radiant Premier</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Triple-pane glass as standard</td>
+          <td class="no">Paid upgrade</td>
+          <td class="hl yes">Standard on every window</td>
+        </tr>
+        <tr>
+          <td>No subcontractors on your job</td>
+          <td class="no">Often subcontracted</td>
+          <td class="hl yes">Our own crew, always</td>
+        </tr>
+        <tr>
+          <td>Factory-certified installation</td>
+          <td class="no">Rarely</td>
+          <td class="hl yes">Certified on every job</td>
+        </tr>
+        <tr>
+          <td>Manufacturer warranty preserved</td>
+          <td class="no">May be voided</td>
+          <td class="hl yes">Fully protected</td>
+        </tr>
+        <tr>
+          <td>Lifetime labor warranty</td>
+          <td class="no">1–2 years typical</td>
+          <td class="hl yes">Lifetime, in writing</td>
+        </tr>
+        <tr>
+          <td>Veteran-owned accountability</td>
+          <td class="no">—</td>
+          <td class="hl yes">Built into our culture</td>
+        </tr>
+        <tr>
+          <td>Transparent, fixed pricing</td>
+          <td class="no">Variable</td>
+          <td class="hl yes">No surprises</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="svc-cta">
+  <div class="container">
+    <span class="section-label">Ready to Begin?</span>
+    <h2>Let's Find the Right Solution<br/>for Your Home</h2>
+    <p>Request a free, no-obligation estimate. We'll assess your home, discuss your goals, and present honest options — with clear pricing and no pressure.</p>
+    <div class="cta-actions">
+      <a href="index.html#contact" class="btn">Get My Free Estimate</a>
+      <a href="tel:4438757617" class="btn btn-outline">(443) 875-7617</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
       <div>
-        <span class="section-label section-label-gold">Our Services</span>
-        <h1>Premium Products. Clean Installation. Real Long-Term Value.</h1>
-        <p class="lead">
-          We help DFW homeowners upgrade the performance, appearance, and comfort of their homes with premium window and door solutions installed with care and precision.
-        </p>
-        <div class="page-hero-actions">
-          <a href="contact.html" class="btn">Get Free Estimate</a>
-          <a href="tel:14697086897" class="btn btn-outline">(469) 708-6897</a>
+        <div class="footer-logo-name">Radiant Premier</div>
+        <span class="footer-logo-tag">Windows &amp; Doors</span>
+        <p class="footer-desc">Premium window and door replacement for discerning DFW homeowners. Veteran and minority owned. Built on integrity, precision, and a commitment to lasting quality.</p>
+        <div class="footer-vet">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="#B8903A"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+          Veteran &amp; Minority Owned Business
         </div>
       </div>
-
-      <div class="img-ph">
-        <strong>Services Hero Image</strong>
-        Add a premium exterior or interior home image here
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
       </div>
-    </div>
-  </section>
-
-  <section class="services-intro">
-    <div class="container">
-      <div class="services-intro-inner">
-        <div>
-          <span class="section-label">What We Offer</span>
-          <h2>Focused Service. Strong Products. No Guesswork.</h2>
-          <div class="divider"></div>
-
-          <p>
-            We do not try to be everything to everyone. We focus on the products and services we trust, and we install them with the kind of attention to detail homeowners should expect when they are making a serious investment in their home.
-          </p>
-
-          <p>
-            Whether you are replacing drafty builder-grade windows, upgrading your front entry, or improving a patio opening, our goal is the same: deliver a better product, a cleaner installation, and an experience that feels professional from start to finish.
-          </p>
-
-          <p>
-            We work with carefully selected manufacturing partners and stay focused on solutions that make sense for the home, the homeowner, and the long term.
-          </p>
-        </div>
-
-        <div class="img-ph">
-          <strong>Project Image</strong>
-          Add an installation or finished project photo here
-        </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:4438757617">(443) 875-7617</a></li>
+          <li><a href="mailto:info@radiantpremierwindows.com">info@radiantpremierwindows.com</a></li>
+          <li><a href="#">Dallas–Fort Worth, TX</a></li>
+          <li><a href="#">Mon–Fri 8am–6pm</a></li>
+        </ul>
       </div>
     </div>
-  </section>
-
-  <section class="services-grid">
-    <div class="container">
-      <span class="section-label">Service Categories</span>
-      <h2>Where We Specialize</h2>
-      <div class="divider"></div>
-
-      <div class="services-grid-wrap">
-        <div class="service-card" id="windows">
-          <h3>Window Replacement</h3>
-          <p>
-            High-performance windows designed to improve energy efficiency, comfort, curb appeal, and long-term durability.
-          </p>
-          <ul class="service-list">
-            <li>Energy-efficient glass packages</li>
-            <li>Cleaner sightlines and better natural light</li>
-            <li>Reduced drafts and improved comfort</li>
-            <li>Custom sizing for your home's openings</li>
-            <li>Professional installation with clean finish work</li>
-          </ul>
-          <a href="contact.html" class="btn">Request Window Estimate</a>
-        </div>
-
-        <div class="service-card" id="entry-doors">
-          <h3>Entry Door Replacement</h3>
-          <p>
-            Premium entry doors that elevate curb appeal, security, insulation, and the overall first impression of your home.
-          </p>
-          <ul class="service-list">
-            <li>Fiberglass and steel options</li>
-            <li>Stronger security and structural performance</li>
-            <li>Custom fit and finish selections</li>
-            <li>Improved weather sealing and efficiency</li>
-            <li>More polished and upscale entry appearance</li>
-          </ul>
-          <a href="contact.html" class="btn">Request Door Estimate</a>
-        </div>
-
-        <div class="service-card" id="patio-doors">
-          <h3>Patio &amp; Sliding Doors</h3>
-          <p>
-            Patio door upgrades that improve function, light, outdoor access, and the overall feel of your living space.
-          </p>
-          <ul class="service-list">
-            <li>Smooth operation and tighter sealing</li>
-            <li>Modern, cleaner-looking frames</li>
-            <li>Better performance in heat and cold</li>
-            <li>Improved view and natural light</li>
-            <li>Options for large and custom openings</li>
-          </ul>
-          <a href="contact.html" class="btn">Request Patio Door Estimate</a>
-        </div>
-      </div>
+    <div class="footer-bottom">
+      <span>© 2026 Radiant Premier Windows &amp; Doors. All rights reserved.</span>
+      <span>Licensed &amp; Insured · Veteran &amp; Minority Owned</span>
     </div>
-  </section>
+  </div>
+</footer>
 
-  <section class="brand-section">
-    <div class="container">
-      <div class="brand-header">
-        <span class="section-label" style="color: rgba(184,144,58,0.8);">Our Brand Partners</span>
-        <h2>We Keep It Simple: Products We Trust and Know Well</h2>
-        <div class="divider" style="background: var(--gold);"></div>
-        <p>
-          We do not carry a huge catalog just to cover every possible price point. We focus on brands we trust because we know the product, the performance, and the level of quality homeowners can expect.
-        </p>
-      </div>
-
-      <div class="brand-grid">
-        <div class="brand-card">
-          <h3>Alside</h3>
-          <span class="brand-sub">Window Partner</span>
-          <p>
-            Alside brings the engineering, consistency, and product depth we want behind our window offerings. Their systems are designed for performance, efficiency, and long-term durability.
-          </p>
-          <p>
-            We recommend Alside when homeowners want stronger thermal performance, cleaner lines, and a window system we can confidently stand behind.
-          </p>
-        </div>
-
-        <div class="brand-card">
-          <h3>ProVia</h3>
-          <span class="brand-sub">Door Partner</span>
-          <p>
-            ProVia is known for premium craftsmanship, thoughtful construction, and beautiful finished products. Their entry and patio doors offer the combination of curb appeal, insulation, and strength that high-end homes deserve.
-          </p>
-          <p>
-            We trust ProVia because their standards align with ours: better materials, better build quality, and better long-term results.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="comparison">
-    <div class="container">
-      <span class="section-label">Why It Matters</span>
-      <h2>The Difference Is in the Details</h2>
-      <div class="divider"></div>
-      <p>
-        A premium product only matters if the installation, communication, and follow-through match it. That's where we separate ourselves from the average contractor experience.
-      </p>
-
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th>What Homeowners Care About</th>
-            <th>Typical Contractor</th>
-            <th class="hl">Radiant Premier</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Premium product guidance</td>
-            <td class="no">Often sales-driven</td>
-            <td class="hl yes">Based on fit and performance</td>
-          </tr>
-          <tr>
-            <td>Installation quality</td>
-            <td class="no">Can vary widely</td>
-            <td class="hl yes">Clean, careful, detail-focused</td>
-          </tr>
-          <tr>
-            <td>Communication</td>
-            <td class="no">Inconsistent</td>
-            <td class="hl yes">Clear and direct</td>
-          </tr>
-          <tr>
-            <td>Long-term value</td>
-            <td class="no">Not always prioritized</td>
-            <td class="hl yes">Central to every recommendation</td>
-          </tr>
-          <tr>
-            <td>Trust and accountability</td>
-            <td class="no">Depends on the crew</td>
-            <td class="hl yes">Built into how we operate</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="svc-cta">
-    <div class="container">
-      <span class="section-label">Ready to Start?</span>
-      <h2>Let's Talk About the Right Fit for Your Home</h2>
-      <p>
-        We'll learn about your project, walk you through the options that make sense, and provide a clear estimate without pressure or guesswork.
-      </p>
-      <div class="cta-actions">
-        <a href="contact.html" class="btn">Get My Free Estimate</a>
-        <a href="tel:14697086897" class="btn btn-outline">(469) 708-6897</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-logo-name">Radiant Premier</div>
-          <span class="footer-logo-tag">Windows &amp; Doors</span>
-          <p class="footer-desc">
-            Premium window and door replacement for discerning DFW homeowners. Veteran and minority owned. Built on integrity, precision, and a commitment to lasting quality.
-          </p>
-          <div class="footer-vet">Veteran &amp; Minority Owned Business</div>
-        </div>
-
-        <div class="footer-col">
-          <h5>Navigate</h5>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="story.html">Our Story</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h5>Contact</h5>
-          <ul>
-            <li><a href="tel:14697086897">(469) 708-6897</a></li>
-            <li><a href="mailto:info@radiantpremierwindows.com">info@radiantpremierwindows.com</a></li>
-            <li><span>Dallas–Fort Worth, TX</span></li>
-            <li><span>Mon–Fri 8am–6pm</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <span>© 2026 Radiant Premier Windows &amp; Doors. All rights reserved.</span>
-        <span>Licensed &amp; Insured · Veteran &amp; Minority Owned</span>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    function toggleMenu() {
-      document.getElementById('mobileMenu').classList.toggle('open');
-    }
-  </script>
+<script>
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+</script>
 </body>
 </html>
