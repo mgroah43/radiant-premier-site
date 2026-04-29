@@ -215,4 +215,4 @@ Fonts loaded from Google Fonts:
 4. Replace image placeholders with real photography as assets become available.
 5. The nav and footer are shared with other pages (`index.html`, `story.html`) — reuse existing layout components if available.
 6. Contact links point to `index.html#contact` — wire to your actual contact route/anchor.
-7. Phone: `(443) 875-7617` | Email: `info@radiantpremierwindows.com`
+7. Phone: `(469) 708-6897` | Email: `info@radiantpremierwindows.com`
